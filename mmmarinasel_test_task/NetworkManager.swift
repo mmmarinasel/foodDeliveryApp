@@ -38,9 +38,9 @@ class NetworkManager: ILoader {
     }
     
     func getURLString(counter: Int) -> String {
-        var defaultURL: String = "https://api.spoonacular.com/recipes/"
+        let defaultURL: String = "https://api.spoonacular.com/recipes/"
         let token: String = "818b821c11004583bd6b95454b9253ad"
-        var id: Int = 716429
+        let id: Int = 716429
         
         let urlString = "\(defaultURL)\(id + counter)information?includeNutrition=false&apiKey=\(token)"
         

@@ -51,7 +51,7 @@ extension ViewController: UITableViewDataSource {
 //        DispatchQueue.main.async {
 //            var ingredients = self.foodDescription[indexPath.row].extendedIngredients
 //            for ingredient in ingredients {
-////                var cellIngrediantsDescription = ""
+//                var cellIngrediantsDescription = ""
 //                if ingredient.name == ingredients.last?.name {
 //                    cell.descriptionLabel.text += ingredient.name
 //                } else {
