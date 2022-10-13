@@ -1,24 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2Y-TH-uOW">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Меню-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mmmarinasel_test_task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ydy-B7-IpT">
+                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="180" id="qac-bO-sqO" customClass="FoodTableViewCell" customModule="mmmarinasel_test_task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qac-bO-sqO" id="VDC-SV-b02">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CfD-bk-FVK">
+                                                    <rect key="frame" x="16" y="24" width="132" height="132"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="132" id="6Bp-xV-Dzj"/>
+                                                        <constraint firstAttribute="width" constant="132" id="WLD-aX-37E"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-Xs-FRN">
+                                                    <rect key="frame" x="180" y="43" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pN1-DT-3ra">
+                                                    <rect key="frame" x="180" y="60" width="171" height="70.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-qW-tKH">
+                                                    <rect key="frame" x="263" y="146.5" width="88" height="33.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="от 345 р">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="XQv-qW-tKH" secondAttribute="trailing" constant="24" id="16j-Gg-gwm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="XQv-qW-tKH" secondAttribute="bottom" constant="-11" id="7YA-Qu-7QF"/>
+                                                <constraint firstItem="CfD-bk-FVK" firstAttribute="leading" secondItem="VDC-SV-b02" secondAttribute="leading" constant="16" id="P85-ka-ojC"/>
+                                                <constraint firstItem="pN1-DT-3ra" firstAttribute="leading" secondItem="CfD-bk-FVK" secondAttribute="trailing" constant="32" id="S5s-iC-6ar"/>
+                                                <constraint firstItem="CfD-bk-FVK" firstAttribute="centerY" secondItem="VDC-SV-b02" secondAttribute="centerY" id="X2S-7t-64m"/>
+                                                <constraint firstAttribute="trailing" secondItem="pN1-DT-3ra" secondAttribute="trailing" constant="24" id="Y67-Wl-Z1v"/>
+                                                <constraint firstItem="mgL-Xs-FRN" firstAttribute="leading" secondItem="CfD-bk-FVK" secondAttribute="trailing" constant="32" id="erN-66-CJe"/>
+                                                <constraint firstItem="XQv-qW-tKH" firstAttribute="top" secondItem="pN1-DT-3ra" secondAttribute="bottom" constant="16" id="fJa-my-kWi"/>
+                                                <constraint firstItem="pN1-DT-3ra" firstAttribute="top" secondItem="VDC-SV-b02" secondAttribute="top" constant="60" id="faI-ZB-Miq"/>
+                                                <constraint firstItem="mgL-Xs-FRN" firstAttribute="top" secondItem="VDC-SV-b02" secondAttribute="topMargin" constant="32" id="hHD-xc-EGD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="pN1-DT-3ra" id="8cJ-bP-5JW"/>
+                                            <outlet property="foodImageView" destination="CfD-bk-FVK" id="WfF-9u-SRW"/>
+                                            <outlet property="nameLabel" destination="mgL-Xs-FRN" id="vWE-bp-mGV"/>
+                                            <outlet property="priceButton" destination="XQv-qW-tKH" id="ceh-NO-moK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JNL-u5-yaF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Lmo-uc-xLF"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36d-pD-shB">
+                                <rect key="frame" x="16" y="40" width="85" height="35"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Москва">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="36d-pD-shB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="CGG-8x-XID"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ydy-B7-IpT" secondAttribute="trailing" id="QhV-Sa-Xcc"/>
+                            <constraint firstItem="36d-pD-shB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XK5-ZA-wsm"/>
+                            <constraint firstItem="Ydy-B7-IpT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oqj-QZ-Qat"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ydy-B7-IpT" secondAttribute="bottom" id="qmM-JK-hoZ"/>
+                            <constraint firstItem="Ydy-B7-IpT" firstAttribute="top" secondItem="36d-pD-shB" secondAttribute="bottom" constant="24" id="qrR-ls-Js0"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Меню" id="83m-CY-8rg"/>
+                    <connections>
+                        <outlet property="foodTableView" destination="Ydy-B7-IpT" id="tOn-3K-p2B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="975.20000000000005" y="3.1484257871064472"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kwZ-to-mg2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="d2Y-TH-uOW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uNK-0x-omr">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kxV-Hn-D5Q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lt-rd-x10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="3.1484257871064472"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

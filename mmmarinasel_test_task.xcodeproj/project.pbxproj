@@ -14,6 +14,9 @@
 		416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC5128F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld */; };
 		416BDC5528F8236100981CAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416BDC5428F8236100981CAA /* Assets.xcassets */; };
 		416BDC5828F8236100981CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416BDC5628F8236100981CAA /* LaunchScreen.storyboard */; };
+		416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC5F28F82E3000981CAA /* NetworkManager.swift */; };
+		416BDC6228F82F6D00981CAA /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC6128F82F6D00981CAA /* FoodTableViewCell.swift */; };
+		416BDC6428F86BB900981CAA /* FoodDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC6328F86BB900981CAA /* FoodDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		416BDC5428F8236100981CAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		416BDC5728F8236100981CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		416BDC5928F8236100981CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		416BDC5F28F82E3000981CAA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		416BDC6128F82F6D00981CAA /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		416BDC6328F86BB900981CAA /* FoodDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
 				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
 				416BDC4C28F8235F00981CAA /* ViewController.swift */,
+				416BDC6128F82F6D00981CAA /* FoodTableViewCell.swift */,
+				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
+				416BDC6328F86BB900981CAA /* FoodDescription.swift */,
 				416BDC4E28F8235F00981CAA /* Main.storyboard */,
 				416BDC5428F8236100981CAA /* Assets.xcassets */,
 				416BDC5628F8236100981CAA /* LaunchScreen.storyboard */,
@@ -143,8 +152,11 @@
 			files = (
 				416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
+				416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */,
 				416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */,
 				416BDC4B28F8235F00981CAA /* SceneDelegate.swift in Sources */,
+				416BDC6228F82F6D00981CAA /* FoodTableViewCell.swift in Sources */,
+				416BDC6428F86BB900981CAA /* FoodDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
