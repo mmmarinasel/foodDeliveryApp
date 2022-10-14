@@ -15,8 +15,4 @@ struct FoodDescription: Codable {
 
 struct Ingredient: Codable {
     var name: String
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "nameClean"
-    }
 }

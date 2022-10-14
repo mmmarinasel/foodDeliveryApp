@@ -10,7 +10,8 @@ class NetworkManager: ILoader {
 //    let a = "\(defaultURL)\(id)information?includeNutrition=false&apiKey=\(token)"
 
     public var defaultURL: String = "https://api.spoonacular.com/recipes/"
-    public let token: String = "818b821c11004583bd6b95454b9253ad"
+//    public let token: String = "818b821c11004583bd6b95454b9253ad"
+//    public let token: String = "621cf00326834aeb96a6659e1474ced4"
     public var id: Int = 716429
     
     func downloadFoodDescription(urlString: String, completion: @escaping (FoodDescription) -> ()) {
@@ -20,7 +21,7 @@ class NetworkManager: ILoader {
                 return
             }
             guard let data = data else { return }
-            
+//            print(data)
             do {
                 let foodDescription = try JSONDecoder().decode(FoodDescription.self,
                                                                from: data)
@@ -39,10 +40,11 @@ class NetworkManager: ILoader {
     
     func getURLString(counter: Int) -> String {
         let defaultURL: String = "https://api.spoonacular.com/recipes/"
-        let token: String = "818b821c11004583bd6b95454b9253ad"
+//        let token: String = "818b821c11004583bd6b95454b9253ad"
+        let token = "621cf00326834aeb96a6659e1474ced4"
         let id: Int = 716429
         
-        let urlString = "\(defaultURL)\(id + counter)information?includeNutrition=false&apiKey=\(token)"
+        let urlString = "\(defaultURL)\(id + counter)/information?includeNutrition=false&apiKey=\(token)"
         
         return urlString
     }
