@@ -43,24 +43,27 @@ extension ViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 160
+        return 192
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderTableView.reuseIdentifier) as? HeaderTableView else { return HeaderTableView() }
-//        headerView.backgroundColor = .green
-//        headerView.scrollView.backgroundColor = .systemPink
-//        headerView.stackView.backgroundColor = .orange
-        
+ 
         headerView.stackView.spacing = 16
-//        headerView.stackView.distribution = .fillEqually
+        headerView.categoriesStackView.spacing = 8
         
         headerView.addImageView(imgName: "food_ad1")
         headerView.addImageView(imgName: "food_ad2")
         headerView.addImageView(imgName: "food_ad3")
         headerView.addImageView(imgName: "food_ad4")
         headerView.addImageView(imgName: "food_ad5")
+        
+        headerView.addButton(name: "Пицца")
+        headerView.addButton(name: "Паста")
+        headerView.addButton(name: "Комбо")
+        headerView.addButton(name: "Десерты")
+        headerView.addButton(name: "Напитки")
         
         return headerView
     }
