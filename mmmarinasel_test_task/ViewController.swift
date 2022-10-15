@@ -28,6 +28,9 @@ class ViewController: UIViewController {
 //            }
 //
 //        }
+        
+        self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
+                                    forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
     }
 
 
@@ -44,42 +47,20 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 160))
-        headerView.backgroundColor = .systemPink
+
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderTableView.reuseIdentifier) as? HeaderTableView else { return HeaderTableView() }
+        headerView.backgroundColor = .green
+        headerView.scrollView.backgroundColor = .systemPink
+        headerView.stackView.backgroundColor = .orange
         
-//        let scrollView = UIScrollView(frame: CGRect( x: 0,
-//                                                     y: 0,
-//                                                     width: tableView.frame.width,
-//                                                     height: 112))
+        headerView.stackView.spacing = 16
+//        headerView.stackView.distribution = .fillEqually
         
-        let scrollView = UIScrollView()
-        scrollView.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalToConstant: 112).isActive = true
-//        let stackView = UIStackView(frame: CGRect(x: 0,
-//                                                  y: 0,
-//                                                  width: ,
-//                                                  height: scrollView.frame.height))
-        headerView.addSubview(scrollView)
-        let stackView = UIStackView()
-        
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-        
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.spacing = 16
-        
-        scrollView.backgroundColor = .orange
-        stackView.backgroundColor = .green
-        
-        
-        scrollView.addSubview(stackView)
+        headerView.addImageView(imgName: "food_ad1")
+        headerView.addImageView(imgName: "food_ad2")
+        headerView.addImageView(imgName: "food_ad3")
+        headerView.addImageView(imgName: "food_ad4")
+        headerView.addImageView(imgName: "food_ad5")
         
         return headerView
     }
