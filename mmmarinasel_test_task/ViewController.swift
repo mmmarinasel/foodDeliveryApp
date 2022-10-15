@@ -49,9 +49,9 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderTableView.reuseIdentifier) as? HeaderTableView else { return HeaderTableView() }
-        headerView.backgroundColor = .green
-        headerView.scrollView.backgroundColor = .systemPink
-        headerView.stackView.backgroundColor = .orange
+//        headerView.backgroundColor = .green
+//        headerView.scrollView.backgroundColor = .systemPink
+//        headerView.stackView.backgroundColor = .orange
         
         headerView.stackView.spacing = 16
 //        headerView.stackView.distribution = .fillEqually

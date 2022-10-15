@@ -21,8 +21,10 @@ class HeaderTableView: UITableViewHeaderFooterView {
         imageView.heightAnchor.constraint(equalToConstant: 112).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         imageView.image = UIImage(named: imgName)
+//        imageView.contentMode = .scaleToFill
         
-        
+        imageView.layer.cornerRadius = 16
+        imageView.clipsToBounds = true
         self.stackView.addArrangedSubview(imageView)
     }
     

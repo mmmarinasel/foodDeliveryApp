@@ -24,14 +24,20 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="bef-Oj-6NQ" secondAttribute="bottom" id="4cl-Wh-ZT2"/>
                         <constraint firstAttribute="trailing" secondItem="bef-Oj-6NQ" secondAttribute="trailing" priority="250" id="5lU-uV-i4Q"/>
-                        <constraint firstItem="bef-Oj-6NQ" firstAttribute="leading" secondItem="6FT-Gr-xgZ" secondAttribute="leading" priority="250" id="E1o-gq-Bcg"/>
+                        <constraint firstItem="bef-Oj-6NQ" firstAttribute="leading" secondItem="6FT-Gr-xgZ" secondAttribute="leading" priority="800" id="E1o-gq-Bcg"/>
                         <constraint firstAttribute="height" constant="112" id="Pbt-TN-0Bb"/>
                         <constraint firstItem="bef-Oj-6NQ" firstAttribute="centerY" secondItem="6FT-Gr-xgZ" secondAttribute="centerY" id="cMp-Mk-188"/>
                         <constraint firstItem="bef-Oj-6NQ" firstAttribute="top" secondItem="6FT-Gr-xgZ" secondAttribute="top" id="pmX-s9-PTo"/>
-                        <constraint firstItem="bef-Oj-6NQ" firstAttribute="centerX" secondItem="6FT-Gr-xgZ" secondAttribute="centerX" id="tg6-Aa-Kdl"/>
+                        <constraint firstItem="bef-Oj-6NQ" firstAttribute="centerX" secondItem="6FT-Gr-xgZ" secondAttribute="centerX" priority="300" id="tg6-Aa-Kdl"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="wep-iV-Q8W"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="3FH-g1-HBd"/>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bza-OG-Udy">
+                    <rect key="frame" x="0.0" y="113" width="390" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="vtT-KG-wGg"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="FpM-LI-fWE"/>
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
