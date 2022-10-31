@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 protocol ILoader {
     func downloadFoodDescription(urlString: String, completion: @escaping (FoodDescription) -> ())
@@ -48,4 +49,16 @@ class NetworkManager: ILoader {
         
         return urlString
     }
+    
+//    func loadImageFromURL(url: String, completion: (UIImage)) {
+//        getData(urlString: url) { data, response, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//            guard let data = data else { return }
+//            let image = try JSONDecoder().decode(UIImage.self, from: data)
+//            
+//        }
+//    }
 }

@@ -20,35 +20,36 @@
                                 <rect key="frame" x="0.0" y="99" width="375" height="519"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="180" id="qac-bO-sqO" customClass="FoodTableViewCell" customModule="mmmarinasel_test_task" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="180"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodCell" rowHeight="200" id="qac-bO-sqO" customClass="FoodTableViewCell" customModule="mmmarinasel_test_task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qac-bO-sqO" id="VDC-SV-b02">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CfD-bk-FVK">
-                                                    <rect key="frame" x="16" y="24" width="132" height="132"/>
+                                                    <rect key="frame" x="16" y="34" width="132" height="132"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="132" id="6Bp-xV-Dzj"/>
                                                         <constraint firstAttribute="width" constant="132" id="WLD-aX-37E"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-Xs-FRN">
-                                                    <rect key="frame" x="180" y="43" width="43.5" height="20.5"/>
+                                                    <rect key="frame" x="180" y="21" width="155" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pN1-DT-3ra">
-                                                    <rect key="frame" x="180" y="60" width="171" height="70.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pN1-DT-3ra">
+                                                    <rect key="frame" x="180" y="51.5" width="171" height="99"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-qW-tKH">
-                                                    <rect key="frame" x="263" y="146.5" width="88" height="33.5"/>
+                                                    <rect key="frame" x="263" y="166.5" width="88" height="33.5"/>
+                                                    <color key="tintColor" red="0.96649688479999996" green="0.29015651349999999" blue="0.49230378870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="от 345 р">
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
@@ -57,6 +58,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="XQv-qW-tKH" secondAttribute="trailing" constant="24" id="16j-Gg-gwm"/>
+                                                <constraint firstItem="pN1-DT-3ra" firstAttribute="top" secondItem="mgL-Xs-FRN" secondAttribute="bottom" constant="10" id="6Pm-bE-zKj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XQv-qW-tKH" secondAttribute="bottom" constant="-11" id="7YA-Qu-7QF"/>
                                                 <constraint firstItem="CfD-bk-FVK" firstAttribute="leading" secondItem="VDC-SV-b02" secondAttribute="leading" constant="16" id="P85-ka-ojC"/>
                                                 <constraint firstItem="pN1-DT-3ra" firstAttribute="leading" secondItem="CfD-bk-FVK" secondAttribute="trailing" constant="32" id="S5s-iC-6ar"/>
@@ -64,8 +66,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="pN1-DT-3ra" secondAttribute="trailing" constant="24" id="Y67-Wl-Z1v"/>
                                                 <constraint firstItem="mgL-Xs-FRN" firstAttribute="leading" secondItem="CfD-bk-FVK" secondAttribute="trailing" constant="32" id="erN-66-CJe"/>
                                                 <constraint firstItem="XQv-qW-tKH" firstAttribute="top" secondItem="pN1-DT-3ra" secondAttribute="bottom" constant="16" id="fJa-my-kWi"/>
-                                                <constraint firstItem="pN1-DT-3ra" firstAttribute="top" secondItem="VDC-SV-b02" secondAttribute="top" constant="60" id="faI-ZB-Miq"/>
-                                                <constraint firstItem="mgL-Xs-FRN" firstAttribute="top" secondItem="VDC-SV-b02" secondAttribute="topMargin" constant="32" id="hHD-xc-EGD"/>
+                                                <constraint firstItem="mgL-Xs-FRN" firstAttribute="top" secondItem="VDC-SV-b02" secondAttribute="topMargin" constant="10" id="hHD-xc-EGD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mgL-Xs-FRN" secondAttribute="trailing" constant="24" id="xV0-Jj-Eh2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
