@@ -6,7 +6,7 @@ class ViewController: UIViewController {
     
     private var heightForRow: CGFloat = 200
     private var heightForHeader: CGFloat = 192
-    private var foodCount: Int = 30
+    private var foodCount: Int = 2
     
     public var foodDescription: [FoodDescription] = []
     private let loader = NetworkManager()
@@ -32,19 +32,18 @@ class ViewController: UIViewController {
         
         self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
-            self.urlString = self.loader.getURLString(counter: 0)
+        
+        for i in 0...self.foodCount {
+            self.urlString = self.loader.getURLString(counter: i)
             self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
                 self?.foodDescription.append(data)
-//                print("GVYFYTFYTFYTFF \(self?.foodDescription)")
                 DispatchQueue.main.async {
                     self?.foodTableView.reloadData()
                 }
                 
             }
+        }
     }
-
-
-
 }
 
 extension ViewController: UITableViewDelegate {
@@ -111,14 +110,12 @@ extension ViewController: UITableViewDataSource {
 //            cell.imageView?.image = UIImage()
         }
         cell.descriptionLabel.isEditable = false
-        
         cell.priceButton.layer.cornerRadius = 5
         cell.priceButton.layer.borderWidth = 1
         cell.priceButton.layer.borderColor = UIColor(red: 246/255,
                                                      green: 74/255,
                                                      blue: 126/255,
                                                      alpha: 1).cgColor
-        
         return cell
     }
     

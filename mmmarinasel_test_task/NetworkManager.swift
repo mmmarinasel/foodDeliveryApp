@@ -50,15 +50,17 @@ class NetworkManager: ILoader {
         return urlString
     }
     
-//    func loadImageFromURL(url: String, completion: (UIImage)) {
-//        getData(urlString: url) { data, response, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//            guard let data = data else { return }
-//            let image = try JSONDecoder().decode(UIImage.self, from: data)
-//            
-//        }
-//    }
+    func loadImageFromURL(urlString: String, completion: @escaping (UIImage) -> Void) {
+        DispatchQueue.global().async {
+            if let url = URL(string: urlString) {
+                if let imageData = try? Data(contentsOf: url) {
+                    if let img = UIImage(data: imageData) {
+                        DispatchQueue.main.async {
+                            completion(img)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

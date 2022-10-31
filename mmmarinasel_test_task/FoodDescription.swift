@@ -1,4 +1,10 @@
 import Foundation
+import UIKit
+
+struct FoodDescriptionOutput {
+    var data: FoodDescription
+    var image: UIImage?
+}
 
 struct FoodDescription: Codable {
     
