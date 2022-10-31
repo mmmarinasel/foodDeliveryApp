@@ -32,20 +32,15 @@ class ViewController: UIViewController {
         
         self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
-        
-//        DispatchQueue.global().async {
-//            self.urlString = self.loader.getURLString(counter: 0)
-//            self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
-//                self?.foodDescription.append(data)
-//                print(data)
-//            }
-//        }
-        
-        
-        self.foodDescription.append(FoodDescription(extendedIngredients: [Ingredient(name: "salt and pepper"), Ingredient(name: "milk"), Ingredient(name: "pasta")],
-                                                    imageURL: "https://spoonacular.com/recipeImages/716429-556x370.jpg",
-                                                    title: "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"))
-        
+            self.urlString = self.loader.getURLString(counter: 0)
+            self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
+                self?.foodDescription.append(data)
+//                print("GVYFYTFYTFYTFF \(self?.foodDescription)")
+                DispatchQueue.main.async {
+                    self?.foodTableView.reloadData()
+                }
+                
+            }
     }
 
 
@@ -103,9 +98,9 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell") as? FoodTableViewCell else { return FoodTableViewCell() }
         
         DispatchQueue.main.async {
-            var ingredients = self.foodDescription[indexPath.row].extendedIngredients
+            let ingredients = self.foodDescription[indexPath.row].extendedIngredients
             for ingredient in ingredients {
-                var cellIngrediantsDescription = ""
+//                var cellIngrediantsDescription = ""
                 if ingredient.name == ingredients.last?.name {
                     cell.descriptionLabel.text += ingredient.name
                 } else {
