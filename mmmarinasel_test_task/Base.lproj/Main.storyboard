@@ -103,14 +103,24 @@
                             <constraint firstItem="Ydy-B7-IpT" firstAttribute="top" secondItem="36d-pD-shB" secondAttribute="bottom" constant="24" id="qrR-ls-Js0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Меню" id="83m-CY-8rg"/>
+                    <tabBarItem key="tabBarItem" title="Меню" image="fork.knife" catalog="system" id="83m-CY-8rg"/>
                     <connections>
                         <outlet property="foodTableView" destination="Ydy-B7-IpT" id="tOn-3K-p2B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975.20000000000005" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="919" y="2"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="PMR-A8-L2M">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="profileID" storyboardName="Profile" id="gdu-SH-FcA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="ffE-Ka-xDO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcC-QU-yuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="466"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kwZ-to-mg2">
@@ -124,14 +134,29 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kxV-Hn-D5Q"/>
+                        <segue destination="gdu-SH-FcA" kind="relationship" relationship="viewControllers" id="lY4-7s-TfP"/>
+                        <segue destination="ySD-ba-ig5" kind="relationship" relationship="viewControllers" id="0sc-6K-YAC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lt-rd-x10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="-82" y="3"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="uEi-NN-SKe">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="cartID" storyboardName="Cart" id="ySD-ba-ig5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="ze9-nz-gWt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Gk-b3-7wm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="466"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -6,29 +6,16 @@ class ViewController: UIViewController {
     
     private var heightForRow: CGFloat = 200
     private var heightForHeader: CGFloat = 192
-    private var foodCount: Int = 2
+    private var foodCount: Int = 1
+    private var counter: Int = 0
     
-    public var foodDescription: [FoodDescription] = []
+//    public var foodDescription: [FoodDescription] = []
+    public var foodData: [FoodDescriptionOutput] = []
     private let loader = NetworkManager()
     private var urlString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let queue = DispatchQueue.global(qos: .userInteractive )
-////        DispatchQueue.global().async {
-//        queue.async {
-////            for i in 0...self.foodCount {
-//                self.urlString = self.loader.getURLString(counter: /*i*/0)
-//                self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
-//                    self?.foodDescription.append(data)
-//                    print(data)
-//                }
-//
-//            DispatchQueue.main.async {
-//                self.foodTableView.reloadData()
-//            }
-//
-//        }
         
         self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
@@ -36,7 +23,8 @@ class ViewController: UIViewController {
         for i in 0...self.foodCount {
             self.urlString = self.loader.getURLString(counter: i)
             self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
-                self?.foodDescription.append(data)
+//                self?.foodDescription.append(data)
+                self?.foodData.append(FoodDescriptionOutput(data: data))
                 DispatchQueue.main.async {
                     self?.foodTableView.reloadData()
                 }
@@ -58,21 +46,24 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderTableView.reuseIdentifier) as? HeaderTableView else { return HeaderTableView() }
- 
-        headerView.stackView.spacing = 16
-        headerView.categoriesStackView.spacing = 8
         
-        headerView.addImageView(imgName: "food_ad1")
-        headerView.addImageView(imgName: "food_ad2")
-        headerView.addImageView(imgName: "food_ad3")
-        headerView.addImageView(imgName: "food_ad4")
-        headerView.addImageView(imgName: "food_ad5")
-        
-        headerView.addButton(name: "Пицца")
-        headerView.addButton(name: "Паста")
-        headerView.addButton(name: "Комбо")
-        headerView.addButton(name: "Десерты")
-        headerView.addButton(name: "Напитки")
+        if self.counter == 0 {
+            headerView.stackView.spacing = 16
+            headerView.categoriesStackView.spacing = 8
+            
+            headerView.addImageView(imgName: "food_ad1")
+            headerView.addImageView(imgName: "food_ad2")
+            headerView.addImageView(imgName: "food_ad3")
+            headerView.addImageView(imgName: "food_ad4")
+            headerView.addImageView(imgName: "food_ad5")
+            
+            headerView.addButton(name: "Пицца")
+            headerView.addButton(name: "Паста")
+            headerView.addButton(name: "Комбо")
+            headerView.addButton(name: "Десерты")
+            headerView.addButton(name: "Напитки")
+            self.counter += 1
+        }
         
         return headerView
     }
@@ -86,7 +77,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.foodDescription.count
+        return self.foodData.count
 //        return 5
     }
     
@@ -97,7 +88,8 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell") as? FoodTableViewCell else { return FoodTableViewCell() }
         
         DispatchQueue.main.async {
-            let ingredients = self.foodDescription[indexPath.row].extendedIngredients
+            let item = self.foodData[indexPath.row]
+            let ingredients = item.data.extendedIngredients
             for ingredient in ingredients {
 //                var cellIngrediantsDescription = ""
                 if ingredient.name == ingredients.last?.name {
@@ -106,7 +98,15 @@ extension ViewController: UITableViewDataSource {
                     cell.descriptionLabel.text += "\(ingredient.name), "
                 }
             }
-            cell.nameLabel.text = self.foodDescription[indexPath.row].title
+            cell.nameLabel.text = item.data.title
+            if item.image == nil {
+                self.loader.loadImageFromURL(urlString: item.data.imageURL) { [weak self] img in
+                    self?.foodData[indexPath.row].image = img
+                    cell.foodImageView.image = img
+                }
+            } else {
+                cell.foodImageView.image = UIImage(named: "placeholder-image")
+            }
 //            cell.imageView?.image = UIImage()
         }
         cell.descriptionLabel.isEditable = false
