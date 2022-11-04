@@ -23,6 +23,7 @@
 		41782CE8291075B7000C33BC /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41782CE7291075B7000C33BC /* Cart.storyboard */; };
 		41782CEA29107780000C33BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CE929107780000C33BC /* ProfileViewController.swift */; };
 		41782CEC2910778E000C33BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CEB2910778E000C33BC /* CartViewController.swift */; };
+		41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CF0291119BD000C33BC /* ProfileInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		41782CE7291075B7000C33BC /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		41782CE929107780000C33BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41782CEB2910778E000C33BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		41782CF0291119BD000C33BC /* ProfileInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,25 +78,50 @@
 		416BDC4728F8235F00981CAA /* mmmarinasel_test_task */ = {
 			isa = PBXGroup;
 			children = (
+				41782CEF2911013F000C33BC /* ListOfFood */,
+				41782CEE29110131000C33BC /* Cart */,
+				41782CED2911011F000C33BC /* Profile */,
 				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
 				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
-				416BDC4C28F8235F00981CAA /* ViewController.swift */,
-				41782CBE28F96BBA000C33BC /* HeaderTableView.swift */,
 				41782CC028F96CF2000C33BC /* HeaderTableView.xib */,
-				416BDC6128F82F6D00981CAA /* FoodTableViewCell.swift */,
-				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
-				41782CE929107780000C33BC /* ProfileViewController.swift */,
-				41782CEB2910778E000C33BC /* CartViewController.swift */,
+				41782CF0291119BD000C33BC /* ProfileInformation.swift */,
 				416BDC6328F86BB900981CAA /* FoodDescription.swift */,
-				416BDC4E28F8235F00981CAA /* Main.storyboard */,
-				41782CE52910756B000C33BC /* Profile.storyboard */,
-				41782CE7291075B7000C33BC /* Cart.storyboard */,
+				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
 				416BDC5428F8236100981CAA /* Assets.xcassets */,
 				416BDC5628F8236100981CAA /* LaunchScreen.storyboard */,
 				416BDC5928F8236100981CAA /* Info.plist */,
 				416BDC5128F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld */,
 			);
 			path = mmmarinasel_test_task;
+			sourceTree = "<group>";
+		};
+		41782CED2911011F000C33BC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				41782CE929107780000C33BC /* ProfileViewController.swift */,
+				41782CE52910756B000C33BC /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		41782CEE29110131000C33BC /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				41782CEB2910778E000C33BC /* CartViewController.swift */,
+				41782CE7291075B7000C33BC /* Cart.storyboard */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		41782CEF2911013F000C33BC /* ListOfFood */ = {
+			isa = PBXGroup;
+			children = (
+				416BDC4C28F8235F00981CAA /* ViewController.swift */,
+				41782CBE28F96BBA000C33BC /* HeaderTableView.swift */,
+				416BDC6128F82F6D00981CAA /* FoodTableViewCell.swift */,
+				416BDC4E28F8235F00981CAA /* Main.storyboard */,
+			);
+			path = ListOfFood;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +134,7 @@
 				416BDC4128F8235F00981CAA /* Sources */,
 				416BDC4228F8235F00981CAA /* Frameworks */,
 				416BDC4328F8235F00981CAA /* Resources */,
+				41782CF22911AFF4000C33BC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -166,6 +194,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41782CF22911AFF4000C33BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		416BDC4128F8235F00981CAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -174,6 +222,7 @@
 				416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
+				41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */,
 				416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */,
 				416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */,
 				41782CBF28F96BBA000C33BC /* HeaderTableView.swift in Sources */,

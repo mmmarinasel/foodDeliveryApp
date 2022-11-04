@@ -8,15 +8,10 @@ class HeaderTableView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
-    
     @IBOutlet weak var categoriesScrollView: UIScrollView!
     @IBOutlet weak var categoriesStackView: UIStackView!
-    
     static let reuseIdentifier = "HeaderID"
-    
-    weak var delegate: HeaderDelegate?
-//    food_ad1
-    
+    weak var delegate: HeaderDelegate?    
     func addImageView(imgName: String) {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +22,6 @@ class HeaderTableView: UITableViewHeaderFooterView {
         imageView.clipsToBounds = true
         self.stackView.addArrangedSubview(imageView)
     }
-    
     func addButton(name: String) {
         let button = UIButton()
         button.heightAnchor.constraint(equalToConstant: 32).isActive = true
@@ -35,7 +29,6 @@ class HeaderTableView: UITableViewHeaderFooterView {
         button.setTitle(name, for: .normal)
 //        button.titleLabel?.font = UIFont(name: "System", size: 13)
         button.titleLabel?.font = .systemFont(ofSize: 13)
-        
         button.layer.cornerRadius = 16
         button.layer.borderWidth = 1
         button.clipsToBounds = true
@@ -51,9 +44,7 @@ class HeaderTableView: UITableViewHeaderFooterView {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         self.categoriesStackView.addArrangedSubview(button)
     }
-    
     @objc func buttonAction(sender: UIButton!) {
       print("Button tapped")
     }
-    
 }

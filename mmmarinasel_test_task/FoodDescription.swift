@@ -7,11 +7,9 @@ struct FoodDescriptionOutput {
 }
 
 struct FoodDescription: Codable {
-    
     var extendedIngredients: [Ingredient]
     var imageURL: String
-    var title: String
-    
+    var title: String    
     enum CodingKeys: String, CodingKey {
         case extendedIngredients
         case imageURL = "image"
