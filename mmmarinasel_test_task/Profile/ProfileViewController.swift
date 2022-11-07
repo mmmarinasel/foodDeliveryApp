@@ -8,9 +8,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
+    
     @IBAction func editPhotoActionButton(_ sender: Any) {
         buildPhotoAlert()
     }
+    
     @IBAction func saveHandleButton(_ sender: Any) {
     }
     
@@ -53,6 +55,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         alert.addAction(cancelButton)
         present(alert, animated: true, completion: nil)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
@@ -91,11 +94,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @objc func cancelDatePicker() {
-        self.view.endEditing(true)
+        self.view.endEditing(true   )
     }
 }
 
 extension UIImageView {
+    
     func setRounded() {
           let radius = CGRectGetWidth(self.frame) / 2
           self.layer.cornerRadius = radius

@@ -24,6 +24,10 @@
 		41782CEA29107780000C33BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CE929107780000C33BC /* ProfileViewController.swift */; };
 		41782CEC2910778E000C33BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CEB2910778E000C33BC /* CartViewController.swift */; };
 		41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CF0291119BD000C33BC /* ProfileInformation.swift */; };
+		41A716A32915C01400127EF6 /* SaveProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */; };
+		41A716A82915C42F00127EF6 /* CartHeaderTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */; };
+		41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716A92915C47000127EF6 /* CartHeaderTableView.swift */; };
+		41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		41782CE929107780000C33BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41782CEB2910778E000C33BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		41782CF0291119BD000C33BC /* ProfileInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformation.swift; sourceTree = "<group>"; };
+		41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProfileDataManager.swift; sourceTree = "<group>"; };
+		41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartHeaderTableView.xib; sourceTree = "<group>"; };
+		41A716A92915C47000127EF6 /* CartHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderTableView.swift; sourceTree = "<group>"; };
+		41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +91,7 @@
 				41782CED2911011F000C33BC /* Profile */,
 				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
 				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
-				41782CC028F96CF2000C33BC /* HeaderTableView.xib */,
+				41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */,
 				41782CF0291119BD000C33BC /* ProfileInformation.swift */,
 				416BDC6328F86BB900981CAA /* FoodDescription.swift */,
 				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
@@ -107,7 +115,9 @@
 		41782CEE29110131000C33BC /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				41A716AB2915C47D00127EF6 /* HeaderTableView */,
 				41782CEB2910778E000C33BC /* CartViewController.swift */,
+				41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */,
 				41782CE7291075B7000C33BC /* Cart.storyboard */,
 			);
 			path = Cart;
@@ -116,12 +126,30 @@
 		41782CEF2911013F000C33BC /* ListOfFood */ = {
 			isa = PBXGroup;
 			children = (
+				41A716A42915C38D00127EF6 /* HeaderTableView */,
 				416BDC4C28F8235F00981CAA /* ViewController.swift */,
-				41782CBE28F96BBA000C33BC /* HeaderTableView.swift */,
 				416BDC6128F82F6D00981CAA /* FoodTableViewCell.swift */,
 				416BDC4E28F8235F00981CAA /* Main.storyboard */,
 			);
 			path = ListOfFood;
+			sourceTree = "<group>";
+		};
+		41A716A42915C38D00127EF6 /* HeaderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				41782CC028F96CF2000C33BC /* HeaderTableView.xib */,
+				41782CBE28F96BBA000C33BC /* HeaderTableView.swift */,
+			);
+			path = HeaderTableView;
+			sourceTree = "<group>";
+		};
+		41A716AB2915C47D00127EF6 /* HeaderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */,
+				41A716A92915C47000127EF6 /* CartHeaderTableView.swift */,
+			);
+			path = HeaderTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A716A82915C42F00127EF6 /* CartHeaderTableView.xib in Resources */,
 				41782CC128F96CF2000C33BC /* HeaderTableView.xib in Resources */,
 				416BDC5828F8236100981CAA /* LaunchScreen.storyboard in Resources */,
 				41782CE62910756B000C33BC /* Profile.storyboard in Resources */,
@@ -220,11 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */,
+				41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
 				41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */,
 				416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */,
 				416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */,
+				41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */,
+				41A716A32915C01400127EF6 /* SaveProfileDataManager.swift in Sources */,
 				41782CBF28F96BBA000C33BC /* HeaderTableView.swift in Sources */,
 				416BDC4B28F8235F00981CAA /* SceneDelegate.swift in Sources */,
 				41782CEA29107780000C33BC /* ProfileViewController.swift in Sources */,
@@ -382,8 +414,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,8 +441,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

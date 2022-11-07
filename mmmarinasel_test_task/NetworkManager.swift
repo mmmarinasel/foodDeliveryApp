@@ -12,6 +12,7 @@ class NetworkManager: ILoader {
 //    public let token: String = "818b821c11004583bd6b95454b9253ad"
 //    public let token: String = "621cf00326834aeb96a6659e1474ced4"
     public var id: Int = 716429
+    
     func downloadFoodDescription(urlString: String,
                                  completion: @escaping (FoodDescription) -> Void) {
         getData(urlString: urlString) { data, _, error in
@@ -31,11 +32,13 @@ class NetworkManager: ILoader {
             }
         }
     }
+    
     func getData(urlString: String,
                  completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
+    
     func getURLString(counter: Int) -> String {
         let defaultURL: String = "https://api.spoonacular.com/recipes/"
 //        let token: String = "818b821c11004583bd6b95454b9253ad"
@@ -44,6 +47,7 @@ class NetworkManager: ILoader {
         let urlString = "\(defaultURL)\(id + counter)/information?includeNutrition=false&apiKey=\(token)"
         return urlString
     }
+    
     func loadImageFromURL(urlString: String, completion: @escaping (UIImage) -> Void) {
         DispatchQueue.global().async {
             if let url = URL(string: urlString),

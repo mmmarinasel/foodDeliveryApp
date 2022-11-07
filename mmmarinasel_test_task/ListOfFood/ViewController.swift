@@ -3,16 +3,20 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var foodTableView: UITableView!
-    private var heightForRow: CGFloat = 200
-    private var heightForHeader: CGFloat = 192
+    
+    private let heightForRow: CGFloat = 200
+    private let heightForHeader: CGFloat = 192
+    
     private var foodCount: Int = 1
     private var counter: Int = 0
-//    public var foodDescription: [FoodDescription] = []
     public var foodData: [FoodDescriptionOutput] = []
+    
     private let loader = NetworkManager()
     private var urlString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
         for temp in 0...self.foodCount {
@@ -29,6 +33,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.heightForRow
     }
@@ -36,6 +41,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.heightForHeader
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderTableView.reuseIdentifier) as? HeaderTableView
@@ -57,6 +63,7 @@ extension ViewController: UITableViewDelegate {
         }
         return headerView
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath,
                               animated: true)
@@ -64,18 +71,19 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.foodData.count
-//        return 5
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell") as? FoodTableViewCell
         else { return FoodTableViewCell() }
+        
         DispatchQueue.main.async {
             let item = self.foodData[indexPath.row]
             let ingredients = item.data.extendedIngredients
             for ingredient in ingredients {
-//                var cellIngrediantsDescription = ""
                 if ingredient.name == ingredients.last?.name {
                     cell.descriptionLabel.text += ingredient.name
                 } else {
@@ -91,7 +99,6 @@ extension ViewController: UITableViewDataSource {
             } else {
                 cell.foodImageView.image = UIImage(named: "placeholder-image")
             }
-//            cell.imageView?.image = UIImage()
         }
         cell.descriptionLabel.isEditable = false
         cell.priceButton.layer.cornerRadius = 5
