@@ -28,6 +28,9 @@
 		41A716A82915C42F00127EF6 /* CartHeaderTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */; };
 		41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716A92915C47000127EF6 /* CartHeaderTableView.swift */; };
 		41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */; };
+		41A716AF2919252900127EF6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AE2919252900127EF6 /* LocationManager.swift */; };
+		41A716B129199DB800127EF6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716B029199DB800127EF6 /* MapViewController.swift */; };
+		41A716B329199DC000127EF6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A716B229199DC000127EF6 /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartHeaderTableView.xib; sourceTree = "<group>"; };
 		41A716A92915C47000127EF6 /* CartHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderTableView.swift; sourceTree = "<group>"; };
 		41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		41A716AE2919252900127EF6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		41A716B029199DB800127EF6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		41A716B229199DC000127EF6 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 				41782CEE29110131000C33BC /* Cart */,
 				41782CED2911011F000C33BC /* Profile */,
 				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
+				41A716AE2919252900127EF6 /* LocationManager.swift */,
+				41A716B029199DB800127EF6 /* MapViewController.swift */,
+				41A716B229199DC000127EF6 /* Map.storyboard */,
 				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
 				41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */,
 				41782CF0291119BD000C33BC /* ProfileInformation.swift */,
@@ -214,6 +223,7 @@
 				41A716A82915C42F00127EF6 /* CartHeaderTableView.xib in Resources */,
 				41782CC128F96CF2000C33BC /* HeaderTableView.xib in Resources */,
 				416BDC5828F8236100981CAA /* LaunchScreen.storyboard in Resources */,
+				41A716B329199DC000127EF6 /* Map.storyboard in Resources */,
 				41782CE62910756B000C33BC /* Profile.storyboard in Resources */,
 				416BDC5528F8236100981CAA /* Assets.xcassets in Resources */,
 				41782CE8291075B7000C33BC /* Cart.storyboard in Resources */,
@@ -250,6 +260,7 @@
 			files = (
 				416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */,
 				41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */,
+				41A716AF2919252900127EF6 /* LocationManager.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
 				41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */,
@@ -262,6 +273,7 @@
 				41782CEA29107780000C33BC /* ProfileViewController.swift in Sources */,
 				416BDC6228F82F6D00981CAA /* FoodTableViewCell.swift in Sources */,
 				416BDC6428F86BB900981CAA /* FoodDescription.swift in Sources */,
+				41A716B129199DB800127EF6 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

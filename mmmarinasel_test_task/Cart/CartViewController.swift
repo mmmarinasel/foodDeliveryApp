@@ -13,6 +13,13 @@ class CartViewController: UIViewController {
                                           bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: CartHeaderTableView.reuseIdentifier)
     }
+    
+    @objc func openMap(sender: UIButton!){
+        let story = UIStoryboard(name: "Map", bundle: nil)
+        let vc = story.instantiateViewController(identifier: "mapVC") as? MapViewController
+        guard let vcontroller = vc else { return }
+        self.present(vcontroller, animated: true, completion: nil)
+      }
 }
 
 extension CartViewController: UITableViewDelegate {
@@ -27,7 +34,12 @@ extension CartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CartHeaderTableView.reuseIdentifier) as? CartHeaderTableView
         else { return CartHeaderTableView() }
+        
         headerView.orderButton.layer.cornerRadius = 16
+        headerView.changeLocationButton.addTarget(self,
+                                                  action: #selector(openMap),
+                                                  for: .touchUpInside)
+        
         return headerView
     }
     
@@ -51,3 +63,12 @@ extension CartViewController: UITableViewDataSource {
     }
 
 }
+
+//extension UIButton {
+//    func openMapViewController() {
+//        let storyboard = UIStoryboard(name: "Map",
+//                                      bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "mapVC")
+//
+//    }
+//}

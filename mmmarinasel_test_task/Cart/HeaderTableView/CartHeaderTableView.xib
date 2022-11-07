@@ -82,6 +82,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addressLabel" destination="QVR-oQ-mtQ" id="FFS-46-IQk"/>
+                <outlet property="changeLocationButton" destination="yLZ-HX-BjD" id="Wmd-vS-Rqr"/>
                 <outlet property="orderButton" destination="f9n-K1-Xsv" id="LnJ-f7-9gd"/>
                 <outlet property="priceLabel" destination="oDD-bS-ihg" id="ziB-PS-p8V"/>
             </connections>
