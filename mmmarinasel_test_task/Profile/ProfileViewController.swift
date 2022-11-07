@@ -111,9 +111,9 @@ extension UIButton {
     func setRoundedBounds() {
         self.layer.cornerRadius = 12
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor(red: 239 / 255,
-                                         green: 158 / 255,
-                                         blue: 80 / 255,
+        self.layer.borderColor = UIColor(red: 166 / 255,
+                                         green: 205 / 255,
+                                         blue: 142 / 255,
                                          alpha: 1).cgColor
     }
 }

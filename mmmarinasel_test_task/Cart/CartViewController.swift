@@ -5,6 +5,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var cartTableView: UITableView!
     
     private let heightForHeader: CGFloat = 160
+    private let heightForCell: CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +16,10 @@ class CartViewController: UIViewController {
 }
 
 extension CartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.heightForCell
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.heightForHeader
     }
@@ -22,7 +27,7 @@ extension CartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CartHeaderTableView.reuseIdentifier) as? CartHeaderTableView
         else { return CartHeaderTableView() }
-        
+        headerView.orderButton.layer.cornerRadius = 16
         return headerView
     }
     

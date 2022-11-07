@@ -18,7 +18,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jqv-O8-fK4">
                                 <rect key="frame" x="75" y="18" width="225" height="225"/>
-                                <color key="backgroundColor" red="0.01250080951" green="0.2688602209" blue="0.78065472840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96146267649999995" green="0.64360922570000001" blue="0.20733931659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="fWZ-oz-NbD"/>
                                     <constraint firstAttribute="width" constant="225" id="zUE-l5-8R7"/>
@@ -26,7 +26,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-Gg-z67">
                                 <rect key="frame" x="280" y="220" width="51" height="32"/>
-                                <color key="tintColor" red="0.93725490196078431" green="0.61960784313725492" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.64961719510000004" green="0.8041822314" blue="0.55649924279999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Edit">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -59,7 +59,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kA8-LD-I8h">
                                 <rect key="frame" x="60" y="564" width="255" height="34"/>
-                                <color key="tintColor" red="0.93725490199999995" green="0.61960784310000006" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.64961719510000004" green="0.8041822314" blue="0.55649924279999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
