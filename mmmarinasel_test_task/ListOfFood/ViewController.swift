@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         for temp in 0...self.foodCount {
             self.urlString = self.loader.getURLString(counter: temp)
             self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
-//                self?.foodDescription.append(data)
                 self?.foodData.append(FoodDescriptionOutput(data: data))
                 DispatchQueue.main.async {
                     self?.foodTableView.reloadData()

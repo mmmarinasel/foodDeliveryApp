@@ -24,13 +24,18 @@
 		41782CEA29107780000C33BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CE929107780000C33BC /* ProfileViewController.swift */; };
 		41782CEC2910778E000C33BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CEB2910778E000C33BC /* CartViewController.swift */; };
 		41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CF0291119BD000C33BC /* ProfileInformation.swift */; };
+		41A4D3A5291A869C002EE413 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D3A4291A869C002EE413 /* Map.storyboard */; };
+		41A4D3A7291BF2E1002EE413 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D3A6291BF2E1002EE413 /* PicturesViewController.swift */; };
+		41A4D3AC291C1F94002EE413 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D3AB291C1F94002EE413 /* PictureCollectionViewCell.swift */; };
+		41A4D3AE291C56EE002EE413 /* OrdersHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D3AD291C56EE002EE413 /* OrdersHistory.storyboard */; };
+		41A4D3B1291C5728002EE413 /* OrdersHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D3B0291C5728002EE413 /* OrdersHistoryViewController.swift */; };
+		41A4D3B3291C5BCF002EE413 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D3B2291C5BCF002EE413 /* OrderTableViewCell.swift */; };
 		41A716A32915C01400127EF6 /* SaveProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */; };
 		41A716A82915C42F00127EF6 /* CartHeaderTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */; };
 		41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716A92915C47000127EF6 /* CartHeaderTableView.swift */; };
 		41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */; };
 		41A716AF2919252900127EF6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AE2919252900127EF6 /* LocationManager.swift */; };
 		41A716B129199DB800127EF6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716B029199DB800127EF6 /* MapViewController.swift */; };
-		41A716B329199DC000127EF6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A716B229199DC000127EF6 /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,13 +58,18 @@
 		41782CE929107780000C33BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41782CEB2910778E000C33BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		41782CF0291119BD000C33BC /* ProfileInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformation.swift; sourceTree = "<group>"; };
+		41A4D3A4291A869C002EE413 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		41A4D3A6291BF2E1002EE413 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		41A4D3AB291C1F94002EE413 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		41A4D3AD291C56EE002EE413 /* OrdersHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrdersHistory.storyboard; sourceTree = "<group>"; };
+		41A4D3B0291C5728002EE413 /* OrdersHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewController.swift; sourceTree = "<group>"; };
+		41A4D3B2291C5BCF002EE413 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProfileDataManager.swift; sourceTree = "<group>"; };
 		41A716A72915C42F00127EF6 /* CartHeaderTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartHeaderTableView.xib; sourceTree = "<group>"; };
 		41A716A92915C47000127EF6 /* CartHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderTableView.swift; sourceTree = "<group>"; };
 		41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		41A716AE2919252900127EF6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		41A716B029199DB800127EF6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		41A716B229199DC000127EF6 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,13 +102,13 @@
 		416BDC4728F8235F00981CAA /* mmmarinasel_test_task */ = {
 			isa = PBXGroup;
 			children = (
+				41A4D3AF291C56F7002EE413 /* OrdersHistory */,
+				41A716B4291A73F300127EF6 /* Map */,
 				41782CEF2911013F000C33BC /* ListOfFood */,
 				41782CEE29110131000C33BC /* Cart */,
 				41782CED2911011F000C33BC /* Profile */,
 				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
 				41A716AE2919252900127EF6 /* LocationManager.swift */,
-				41A716B029199DB800127EF6 /* MapViewController.swift */,
-				41A716B229199DC000127EF6 /* Map.storyboard */,
 				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
 				41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */,
 				41782CF0291119BD000C33BC /* ProfileInformation.swift */,
@@ -115,6 +125,7 @@
 		41782CED2911011F000C33BC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				41A4D3A8291BF2E7002EE413 /* Pictures */,
 				41782CE929107780000C33BC /* ProfileViewController.swift */,
 				41782CE52910756B000C33BC /* Profile.storyboard */,
 			);
@@ -143,6 +154,25 @@
 			path = ListOfFood;
 			sourceTree = "<group>";
 		};
+		41A4D3A8291BF2E7002EE413 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				41A4D3A6291BF2E1002EE413 /* PicturesViewController.swift */,
+				41A4D3AB291C1F94002EE413 /* PictureCollectionViewCell.swift */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
+		41A4D3AF291C56F7002EE413 /* OrdersHistory */ = {
+			isa = PBXGroup;
+			children = (
+				41A4D3B0291C5728002EE413 /* OrdersHistoryViewController.swift */,
+				41A4D3B2291C5BCF002EE413 /* OrderTableViewCell.swift */,
+				41A4D3AD291C56EE002EE413 /* OrdersHistory.storyboard */,
+			);
+			path = OrdersHistory;
+			sourceTree = "<group>";
+		};
 		41A716A42915C38D00127EF6 /* HeaderTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +189,15 @@
 				41A716A92915C47000127EF6 /* CartHeaderTableView.swift */,
 			);
 			path = HeaderTableView;
+			sourceTree = "<group>";
+		};
+		41A716B4291A73F300127EF6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				41A716B029199DB800127EF6 /* MapViewController.swift */,
+				41A4D3A4291A869C002EE413 /* Map.storyboard */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,10 +259,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A4D3AE291C56EE002EE413 /* OrdersHistory.storyboard in Resources */,
 				41A716A82915C42F00127EF6 /* CartHeaderTableView.xib in Resources */,
 				41782CC128F96CF2000C33BC /* HeaderTableView.xib in Resources */,
 				416BDC5828F8236100981CAA /* LaunchScreen.storyboard in Resources */,
-				41A716B329199DC000127EF6 /* Map.storyboard in Resources */,
+				41A4D3A5291A869C002EE413 /* Map.storyboard in Resources */,
 				41782CE62910756B000C33BC /* Profile.storyboard in Resources */,
 				416BDC5528F8236100981CAA /* Assets.xcassets in Resources */,
 				41782CE8291075B7000C33BC /* Cart.storyboard in Resources */,
@@ -259,14 +299,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */,
+				41A4D3B1291C5728002EE413 /* OrdersHistoryViewController.swift in Sources */,
 				41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */,
 				41A716AF2919252900127EF6 /* LocationManager.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
+				41A4D3B3291C5BCF002EE413 /* OrderTableViewCell.swift in Sources */,
 				41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */,
 				416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */,
 				416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */,
 				41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */,
+				41A4D3AC291C1F94002EE413 /* PictureCollectionViewCell.swift in Sources */,
+				41A4D3A7291BF2E1002EE413 /* PicturesViewController.swift in Sources */,
 				41A716A32915C01400127EF6 /* SaveProfileDataManager.swift in Sources */,
 				41782CBF28F96BBA000C33BC /* HeaderTableView.swift in Sources */,
 				416BDC4B28F8235F00981CAA /* SceneDelegate.swift in Sources */,

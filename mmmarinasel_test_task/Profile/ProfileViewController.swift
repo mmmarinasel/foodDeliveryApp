@@ -31,7 +31,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let alert = UIAlertController(title: nil,
                                       message: nil,
                                       preferredStyle: .actionSheet)
-        let cameraButton = UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
+        let cameraButton = UIAlertAction(title: "Camera",
+                                         style: .default) { [weak self] _ in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
@@ -40,7 +41,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self?.present(imagePicker, animated: true, completion: nil)
             }
         }
-        let photoLibraryButton = UIAlertAction(title: "Photo libraby", style: .default) { [weak self] _ in
+        let photoLibraryButton = UIAlertAction(title: "Photo libraby",
+                                               style: .default) { [weak self] _ in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
@@ -49,9 +51,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self?.present(imagePicker, animated: true, completion: nil)
             }
         }
-        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let networkButton = UIAlertAction(title: "Upload from network",
+                                          style: .default) { [weak self] _ in
+            let vc = PicturesViewController()
+//            vc.modalPresentationStyle = .popover
+            self?.present(vc, animated: true)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel",
+                                         style: .destructive,
+                                         handler: nil)
         alert.addAction(cameraButton)
         alert.addAction(photoLibraryButton)
+        alert.addAction(networkButton)
         alert.addAction(cancelButton)
         present(alert, animated: true, completion: nil)
     }

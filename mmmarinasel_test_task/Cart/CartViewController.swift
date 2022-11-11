@@ -13,8 +13,26 @@ class CartViewController: UIViewController {
                                           bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: CartHeaderTableView.reuseIdentifier)
     }
+    @objc func buildAlert(sender: UIButton!) {
+        let alert = UIAlertController(title: nil,
+                                      message: nil,
+                                      preferredStyle: .actionSheet)
+        let mapButton = UIAlertAction(title: "Open map",
+                                      style: .default) { [weak self] _ in
+            self?.openMap()
+        }
+        let enterManuallyButton = UIAlertAction(title: "Enter manually",
+                                                style: .default) { [weak self] _ in
+            
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
+        alert.addAction(mapButton)
+        alert.addAction(enterManuallyButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true)
+    }
     
-    @objc func openMap(sender: UIButton!){
+    func openMap() {
         let story = UIStoryboard(name: "Map", bundle: nil)
         let vc = story.instantiateViewController(identifier: "mapVC") as? MapViewController
         guard let vcontroller = vc else { return }
@@ -36,9 +54,7 @@ extension CartViewController: UITableViewDelegate {
         else { return CartHeaderTableView() }
         
         headerView.orderButton.layer.cornerRadius = 16
-        headerView.changeLocationButton.addTarget(self,
-                                                  action: #selector(openMap),
-                                                  for: .touchUpInside)
+        headerView.changeLocationButton.addTarget(self, action: #selector(buildAlert), for: .touchUpInside)
         
         return headerView
     }
@@ -63,12 +79,3 @@ extension CartViewController: UITableViewDataSource {
     }
 
 }
-
-//extension UIButton {
-//    func openMapViewController() {
-//        let storyboard = UIStoryboard(name: "Map",
-//                                      bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "mapVC")
-//
-//    }
-//}

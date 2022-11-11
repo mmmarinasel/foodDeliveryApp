@@ -4,7 +4,12 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
+    @IBAction func backHandleButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     @IBOutlet weak var mapView: MKMapView!
+    
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
     
     override func viewDidLoad() {
