@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-protocol ILoader {
+protocol IFoodLoader {
     func downloadFoodDescription(urlString: String, completion: @escaping (FoodDescription) -> Void)
     func getData(urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
 
-class NetworkManager: ILoader {
+class NetworkManager: IFoodLoader {
 
     public var defaultURL: String = "https://api.spoonacular.com/recipes/"
 //    public let token: String = "818b821c11004583bd6b95454b9253ad"

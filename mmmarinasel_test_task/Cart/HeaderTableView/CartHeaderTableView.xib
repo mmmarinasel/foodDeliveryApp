@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9n-K1-Xsv">
-                    <rect key="frame" x="145" y="100.66666666666667" width="100" height="34.333333333333329"/>
+                    <rect key="frame" x="145" y="107.66666666666667" width="100" height="34.333333333333329"/>
                     <color key="backgroundColor" red="0.66631394619999995" green="0.7450824976" blue="0.74508553740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="WXB-SZ-RBL"/>
@@ -48,49 +48,65 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLZ-HX-BjD">
-                    <rect key="frame" x="303.33333333333331" y="45" width="71.666666666666686" height="34.333333333333343"/>
+                    <rect key="frame" x="337.66666666666669" y="45" width="37.333333333333314" height="34.333333333333343"/>
                     <color key="tintColor" red="0.097744785249999994" green="0.47048187260000002" blue="0.51125127079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
                     </buttonConfiguration>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ул. Теплый Стан 15к3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVR-oQ-mtQ">
-                    <rect key="frame" x="113.00000000000001" y="51" width="178.33333333333337" height="20.333333333333329"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your adress" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LH3-hy-GCd">
+                    <rect key="frame" x="81.999999999999986" y="41" width="248.66666666666663" height="57"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-Nj-okN">
+                    <rect key="frame" x="336" y="87" width="39" height="35"/>
+                    <color key="tintColor" red="0.089764215049999999" green="0.4665470719" blue="0.51545184850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                    </buttonConfiguration>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="T8B-TC-dUt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="T8B-TC-dUt" firstAttribute="bottom" secondItem="jZe-Nj-okN" secondAttribute="bottom" constant="38" id="2rs-IQ-T1W"/>
+                <constraint firstItem="oDD-bS-ihg" firstAttribute="bottom" secondItem="LH3-hy-GCd" secondAttribute="top" constant="-8" id="4bY-bf-fRU"/>
+                <constraint firstItem="T8B-TC-dUt" firstAttribute="trailing" secondItem="jZe-Nj-okN" secondAttribute="trailing" constant="15" id="6Cy-6w-wwZ"/>
                 <constraint firstItem="TEY-2J-CBJ" firstAttribute="leading" secondItem="XgS-DM-jCQ" secondAttribute="leading" constant="15" id="BEu-BZ-PzE"/>
+                <constraint firstItem="f9n-K1-Xsv" firstAttribute="top" secondItem="LH3-hy-GCd" secondAttribute="bottom" constant="9.6699999999999999" id="DKr-ap-VY9"/>
                 <constraint firstItem="oDD-bS-ihg" firstAttribute="leading" secondItem="TEY-2J-CBJ" secondAttribute="trailing" constant="20" id="IzC-YO-2Gq"/>
+                <constraint firstItem="LH3-hy-GCd" firstAttribute="leading" secondItem="7Pk-yz-kaa" secondAttribute="trailing" priority="500" constant="8" id="J6l-9Q-Exj"/>
                 <constraint firstItem="7Pk-yz-kaa" firstAttribute="leading" secondItem="T8B-TC-dUt" secondAttribute="leading" constant="15" id="LNX-kZ-GgP"/>
+                <constraint firstItem="yLZ-HX-BjD" firstAttribute="leading" secondItem="LH3-hy-GCd" secondAttribute="trailing" priority="600" constant="7" id="SUZ-OT-ya2"/>
                 <constraint firstItem="yLZ-HX-BjD" firstAttribute="top" secondItem="XgS-DM-jCQ" secondAttribute="top" constant="45" id="TbP-6Y-cjN"/>
                 <constraint firstItem="oDD-bS-ihg" firstAttribute="top" secondItem="XgS-DM-jCQ" secondAttribute="top" constant="12" id="U97-Hm-FW1"/>
-                <constraint firstItem="QVR-oQ-mtQ" firstAttribute="leading" secondItem="7Pk-yz-kaa" secondAttribute="trailing" constant="39" id="YMA-OP-Vna"/>
                 <constraint firstItem="TEY-2J-CBJ" firstAttribute="top" secondItem="XgS-DM-jCQ" secondAttribute="top" constant="15" id="Zo5-Dt-GrL"/>
-                <constraint firstItem="yLZ-HX-BjD" firstAttribute="leading" secondItem="QVR-oQ-mtQ" secondAttribute="trailing" constant="12" id="amn-Dl-Fgk"/>
                 <constraint firstItem="T8B-TC-dUt" firstAttribute="trailing" secondItem="yLZ-HX-BjD" secondAttribute="trailing" constant="15" id="ic0-jf-eYN"/>
-                <constraint firstItem="QVR-oQ-mtQ" firstAttribute="top" secondItem="oDD-bS-ihg" secondAttribute="bottom" constant="18" id="j6c-Ui-DB6"/>
-                <constraint firstItem="T8B-TC-dUt" firstAttribute="bottom" secondItem="f9n-K1-Xsv" secondAttribute="bottom" constant="25" id="lqp-nn-oHZ"/>
+                <constraint firstItem="T8B-TC-dUt" firstAttribute="bottom" secondItem="f9n-K1-Xsv" secondAttribute="bottom" constant="18" id="lqp-nn-oHZ"/>
                 <constraint firstItem="7Pk-yz-kaa" firstAttribute="top" secondItem="TEY-2J-CBJ" secondAttribute="bottom" constant="20" id="xqe-AG-qMQ"/>
                 <constraint firstItem="f9n-K1-Xsv" firstAttribute="centerX" secondItem="XgS-DM-jCQ" secondAttribute="centerX" id="yiU-ae-clQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="addressLabel" destination="QVR-oQ-mtQ" id="FFS-46-IQk"/>
+                <outlet property="addressTextView" destination="LH3-hy-GCd" id="wqc-04-fy9"/>
                 <outlet property="changeLocationButton" destination="yLZ-HX-BjD" id="Wmd-vS-Rqr"/>
-                <outlet property="orderButton" destination="f9n-K1-Xsv" id="LnJ-f7-9gd"/>
+                <outlet property="orderButton" destination="jZe-Nj-okN" id="1j2-xC-6Jg"/>
                 <outlet property="priceLabel" destination="oDD-bS-ihg" id="ziB-PS-p8V"/>
             </connections>
             <point key="canvasLocation" x="50.381679389312978" y="0.70422535211267612"/>
         </view>
     </objects>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

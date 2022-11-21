@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4129126129284DA5000D8EC6 /* PicturesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129126029284DA5000D8EC6 /* PicturesLoader.swift */; };
+		412912632929532F000D8EC6 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412912622929532F000D8EC6 /* PictureModel.swift */; };
 		416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC4828F8235F00981CAA /* AppDelegate.swift */; };
 		416BDC4B28F8235F00981CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC4A28F8235F00981CAA /* SceneDelegate.swift */; };
 		416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC4C28F8235F00981CAA /* ViewController.swift */; };
@@ -23,7 +25,7 @@
 		41782CE8291075B7000C33BC /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41782CE7291075B7000C33BC /* Cart.storyboard */; };
 		41782CEA29107780000C33BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CE929107780000C33BC /* ProfileViewController.swift */; };
 		41782CEC2910778E000C33BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CEB2910778E000C33BC /* CartViewController.swift */; };
-		41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CF0291119BD000C33BC /* ProfileInformation.swift */; };
+		41782CF1291119BD000C33BC /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41782CF0291119BD000C33BC /* ProfileData.swift */; };
 		41A4D3A5291A869C002EE413 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D3A4291A869C002EE413 /* Map.storyboard */; };
 		41A4D3A7291BF2E1002EE413 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D3A6291BF2E1002EE413 /* PicturesViewController.swift */; };
 		41A4D3AC291C1F94002EE413 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D3AB291C1F94002EE413 /* PictureCollectionViewCell.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4129126029284DA5000D8EC6 /* PicturesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesLoader.swift; sourceTree = "<group>"; };
+		412912622929532F000D8EC6 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
 		416BDC4528F8235F00981CAA /* mmmarinasel_test_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmmarinasel_test_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		416BDC4828F8235F00981CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		416BDC4A28F8235F00981CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 		41782CE7291075B7000C33BC /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		41782CE929107780000C33BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41782CEB2910778E000C33BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		41782CF0291119BD000C33BC /* ProfileInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformation.swift; sourceTree = "<group>"; };
+		41782CF0291119BD000C33BC /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		41A4D3A4291A869C002EE413 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		41A4D3A6291BF2E1002EE413 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		41A4D3AB291C1F94002EE413 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,9 +115,11 @@
 				41A716AE2919252900127EF6 /* LocationManager.swift */,
 				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
 				41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */,
-				41782CF0291119BD000C33BC /* ProfileInformation.swift */,
+				41782CF0291119BD000C33BC /* ProfileData.swift */,
 				416BDC6328F86BB900981CAA /* FoodDescription.swift */,
 				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
+				4129126029284DA5000D8EC6 /* PicturesLoader.swift */,
+				412912622929532F000D8EC6 /* PictureModel.swift */,
 				416BDC5428F8236100981CAA /* Assets.xcassets */,
 				416BDC5628F8236100981CAA /* LaunchScreen.storyboard */,
 				416BDC5928F8236100981CAA /* Info.plist */,
@@ -304,9 +310,11 @@
 				41A716AF2919252900127EF6 /* LocationManager.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
+				4129126129284DA5000D8EC6 /* PicturesLoader.swift in Sources */,
 				41A4D3B3291C5BCF002EE413 /* OrderTableViewCell.swift in Sources */,
-				41782CF1291119BD000C33BC /* ProfileInformation.swift in Sources */,
+				41782CF1291119BD000C33BC /* ProfileData.swift in Sources */,
 				416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */,
+				412912632929532F000D8EC6 /* PictureModel.swift in Sources */,
 				416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */,
 				41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */,
 				41A4D3AC291C1F94002EE413 /* PictureCollectionViewCell.swift in Sources */,

@@ -38,6 +38,10 @@ class CartViewController: UIViewController {
         guard let vcontroller = vc else { return }
         self.present(vcontroller, animated: true, completion: nil)
       }
+    
+    func changeAdressManually(textView: UITextView) {
+        textView.isEditable = true
+    }
 }
 
 extension CartViewController: UITableViewDelegate {
@@ -52,7 +56,7 @@ extension CartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CartHeaderTableView.reuseIdentifier) as? CartHeaderTableView
         else { return CartHeaderTableView() }
-        
+        headerView.addressTextView.isEditable = false
         headerView.orderButton.layer.cornerRadius = 16
         headerView.changeLocationButton.addTarget(self, action: #selector(buildAlert), for: .touchUpInside)
         

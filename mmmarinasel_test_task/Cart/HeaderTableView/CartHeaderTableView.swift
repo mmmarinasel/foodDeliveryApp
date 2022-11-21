@@ -3,9 +3,8 @@ import UIKit
 class CartHeaderTableView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var priceLabel: UILabel!
-    
-    @IBOutlet weak var addressLabel: UILabel!
-    
+    @IBOutlet weak var addressTextView: UITextView!
+    @IBOutlet weak var saveAddressButton: UIButton!
     @IBOutlet weak var orderButton: UIButton!
     
     @IBAction func orderHandleButton(_ sender: Any) {

@@ -5,6 +5,8 @@ class PicturesViewController: UIViewController {
     private var picturesCollectionView: UICollectionView?
     
     private let cellId: String = "pictureCell"
+    private let verticalPadding: Double = 20
+    private let horizontalPadding: Double = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,9 @@ class PicturesViewController: UIViewController {
                                            left: 10,
                                            bottom: 10,
                                            right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
+        let sideSize: Double = Double(self.view.frame.width) / 3 - 1.5 * self.horizontalPadding
+        layout.itemSize = CGSize(width: sideSize,
+                                 height: sideSize)
         
         self.picturesCollectionView = UICollectionView(frame: self.view.frame,
                                                        collectionViewLayout: layout)

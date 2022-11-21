@@ -14,10 +14,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func saveHandleButton(_ sender: Any) {
+        if let name = self.nameTextField.text, let number = self.phoneNumberTextField.text {
+            self.profileData = ProfileData(name: name,
+                                           birthday: self.birthdayTextField.text,
+                                           email: self.emailTextField.text,
+                                           phoneNumber: number)
+        } else {
+            buildErrorAlert()
+        }
     }
     
     let datePicker = UIDatePicker()
-    private var profileInfo = ProfileInformation()
+    private var profileData: ProfileData? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.saveButton.setRoundedBounds()
         
         showDatePicker()
+    }
+    
+    private func buildErrorAlert() {
+        let alert = UIAlertController(title: "You have to enter your name and phone number",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .destructive)
+        alert.addAction(okButton)
+        present(alert, animated: true)
     }
     
     private func buildPhotoAlert() {
