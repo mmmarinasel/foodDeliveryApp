@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4129126129284DA5000D8EC6 /* PicturesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129126029284DA5000D8EC6 /* PicturesLoader.swift */; };
 		412912632929532F000D8EC6 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412912622929532F000D8EC6 /* PictureModel.swift */; };
 		416BDC4928F8235F00981CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC4828F8235F00981CAA /* AppDelegate.swift */; };
 		416BDC4B28F8235F00981CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BDC4A28F8235F00981CAA /* SceneDelegate.swift */; };
@@ -41,7 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4129126029284DA5000D8EC6 /* PicturesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesLoader.swift; sourceTree = "<group>"; };
 		412912622929532F000D8EC6 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
 		416BDC4528F8235F00981CAA /* mmmarinasel_test_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmmarinasel_test_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		416BDC4828F8235F00981CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				41782CF0291119BD000C33BC /* ProfileData.swift */,
 				416BDC6328F86BB900981CAA /* FoodDescription.swift */,
 				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
-				4129126029284DA5000D8EC6 /* PicturesLoader.swift */,
 				412912622929532F000D8EC6 /* PictureModel.swift */,
 				416BDC5428F8236100981CAA /* Assets.xcassets */,
 				416BDC5628F8236100981CAA /* LaunchScreen.storyboard */,
@@ -310,7 +307,6 @@
 				41A716AF2919252900127EF6 /* LocationManager.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
-				4129126129284DA5000D8EC6 /* PicturesLoader.swift in Sources */,
 				41A4D3B3291C5BCF002EE413 /* OrderTableViewCell.swift in Sources */,
 				41782CF1291119BD000C33BC /* ProfileData.swift in Sources */,
 				416BDC6028F82E3100981CAA /* NetworkManager.swift in Sources */,

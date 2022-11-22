@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     private var counter: Int = 0
     public var foodData: [FoodDescriptionOutput] = []
     
-    private let loader = NetworkManager()
     private var urlString = ""
     
     override func viewDidLoad() {
@@ -20,8 +19,8 @@ class ViewController: UIViewController {
         self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
         for temp in 0...self.foodCount {
-            self.urlString = self.loader.getURLString(counter: temp)
-            self.loader.downloadFoodDescription(urlString: self.urlString) { [weak self] data in
+            self.urlString = NetworkManager.getURLString(counter: temp)
+            NetworkManager.getJson(urlString: self.urlString) { [weak self] data in
                 self?.foodData.append(FoodDescriptionOutput(data: data))
                 DispatchQueue.main.async {
                     self?.foodTableView.reloadData()
@@ -91,7 +90,7 @@ extension ViewController: UITableViewDataSource {
             }
             cell.nameLabel.text = item.data.title
             if item.image == nil {
-                self.loader.loadImageFromURL(urlString: item.data.imageURL) { [weak self] img in
+                NetworkManager.loadImageFromURL(urlString: item.data.imageURL) { [weak self] img in
                     self?.foodData[indexPath.row].image = img
                     cell.foodImageView.image = img
                 }

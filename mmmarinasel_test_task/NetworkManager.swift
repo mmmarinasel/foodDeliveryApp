@@ -1,31 +1,32 @@
 import Foundation
 import UIKit
 
-protocol IFoodLoader {
-    func downloadFoodDescription(urlString: String, completion: @escaping (FoodDescription) -> Void)
-    func getData(urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+protocol ILoader {
+    static func getJson<T: Codable>(urlString: String, completion: @escaping (T) -> Void)
+    static func getData(urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+    static func getPicturesJson(urlString: String, completion: @escaping ([PictureModel]) -> Void)
 }
 
-class NetworkManager: IFoodLoader {
+protocol IPicturesLoader {
+    static func loadImageFromURL(urlString: String, completion: @escaping (UIImage) -> Void)
+}
+
+class NetworkManager: ILoader, IPicturesLoader {
 
     public var defaultURL: String = "https://api.spoonacular.com/recipes/"
-//    public let token: String = "818b821c11004583bd6b95454b9253ad"
-//    public let token: String = "621cf00326834aeb96a6659e1474ced4"
-    public var id: Int = 716429
+    public var idReceipt: Int = 716429
     
-    func downloadFoodDescription(urlString: String,
-                                 completion: @escaping (FoodDescription) -> Void) {
-        getData(urlString: urlString) { data, _, error in
+    static func getJson<T: Codable>(urlString: String, completion: @escaping (T) -> Void) {
+        NetworkManager.getData(urlString: urlString) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
             guard let data = data else { return }
-//            print(data)
             do {
-                let foodDescription = try JSONDecoder().decode(FoodDescription.self,
-                                                               from: data)
-                completion(foodDescription)
+                let json = try JSONDecoder().decode(T.self,
+                                                    from: data)
+                completion(json)
             } catch {
                 print(error.localizedDescription)
                 print(error)
@@ -33,13 +34,31 @@ class NetworkManager: IFoodLoader {
         }
     }
     
-    func getData(urlString: String,
+    static func getPicturesJson(urlString: String, completion: @escaping ([PictureModel]) -> Void) {
+        NetworkManager.getData(urlString: urlString) { data, _, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let data = data else { return }
+            do {
+                let json = try JSONDecoder().decode([PictureModel].self,
+                                                    from: data)
+                completion(json)
+            } catch {
+                print(error.localizedDescription)
+                print(error)
+            }
+        }
+    }
+    
+    static func getData(urlString: String,
                  completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
-    func getURLString(counter: Int) -> String {
+    static func getURLString(counter: Int) -> String {
         let defaultURL: String = "https://api.spoonacular.com/recipes/"
 //        let token: String = "818b821c11004583bd6b95454b9253ad"
         let token = "621cf00326834aeb96a6659e1474ced4"
@@ -48,7 +67,7 @@ class NetworkManager: IFoodLoader {
         return urlString
     }
     
-    func loadImageFromURL(urlString: String, completion: @escaping (UIImage) -> Void) {
+    static func loadImageFromURL(urlString: String, completion: @escaping (UIImage) -> Void) {
         DispatchQueue.global().async {
             if let url = URL(string: urlString),
                let imageData = try? Data(contentsOf: url),

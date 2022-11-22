@@ -4,12 +4,20 @@ class PicturesViewController: UIViewController {
 
     private var picturesCollectionView: UICollectionView?
     
+    private let urlString: String = "https://api.unsplash.com/photos/?client_id=RDTgAwXSjpgiUCmhnvEhTqQ-lYoE7FGHg2aGJo0vGEQ"
+    
     private let cellId: String = "pictureCell"
     private let verticalPadding: Double = 20
     private let horizontalPadding: Double = 10
     
+    var pictures: [PictureModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.getPicturesJson(urlString: self.urlString) { [weak self] data in
+            self?.pictures.append(contentsOf: data)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,13 +55,21 @@ extension PicturesViewController: UICollectionViewDelegate {
 
 extension PicturesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return self.pictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId,
-                                                      for: indexPath)
-        cell.backgroundColor = .cyan
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId,
+                                                            for: indexPath) as? PictureCollectionViewCell
+        else { return PictureCollectionViewCell() }
+        cell.backgroundColor = .systemMint
+        cell.setImage(nil)
+        NetworkManager.loadImageFromURL(urlString: self.pictures[indexPath.row].urls.small) { img in
+//            print(self?.pictures[indexPath.row].urls.small)
+            cell.setImage(img)
+            
+//            self?.picturesCollectionView?.reloadData()
+        }
         return cell
     }
     
