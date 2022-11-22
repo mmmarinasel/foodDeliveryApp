@@ -10,6 +10,8 @@ class PicturesViewController: UIViewController {
     private let verticalPadding: Double = 20
     private let horizontalPadding: Double = 10
     
+    var delegate: IPicturePickable?
+    
     var pictures: [PictureModel] = []
     
     override func viewDidLoad() {
@@ -49,7 +51,10 @@ class PicturesViewController: UIViewController {
 
 extension PicturesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell tapped")
+        NetworkManager.loadImageFromURL(urlString: self.pictures[indexPath.row].urls.small) { [weak self] pic in
+            self?.delegate?.handlePicturePicked(image: pic)
+        }
+        self.dismiss(animated: true)
     }
 }
 
@@ -65,10 +70,7 @@ extension PicturesViewController: UICollectionViewDataSource {
         cell.backgroundColor = .systemMint
         cell.setImage(nil)
         NetworkManager.loadImageFromURL(urlString: self.pictures[indexPath.row].urls.small) { img in
-//            print(self?.pictures[indexPath.row].urls.small)
             cell.setImage(img)
-            
-//            self?.picturesCollectionView?.reloadData()
         }
         return cell
     }

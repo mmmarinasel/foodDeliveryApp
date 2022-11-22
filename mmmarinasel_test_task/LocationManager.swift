@@ -2,10 +2,10 @@ import Foundation
 import CoreLocation
 
 class LocationManager: NSObject {
-    static let shared  = LocationManager()
+    static let shared = LocationManager()
     
     typealias AccessRequestBlock = (Bool) -> Void
-    typealias LocationRequestBlock  = (CLLocationCoordinate2D?) -> Void
+    typealias LocationRequestBlock = (CLLocationCoordinate2D?) -> Void
     
     var isEnabled: Bool { return CLLocationManager.isEnabled }
     var canRequestAccess: Bool { return CLLocationManager.canRequestService }

@@ -1,4 +1,9 @@
 import Foundation
+import UIKit
+
+protocol IPicturePickable {
+    func handlePicturePicked(image: UIImage)
+}
 
 struct PictureModel: Codable {
     let id: String
