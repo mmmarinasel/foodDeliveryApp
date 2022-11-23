@@ -1,8 +1,12 @@
 import Foundation
+import UIKit
 
 protocol ISaveManager {
     func save(profileData: ProfileData, _ completion: @escaping ([Error]) -> Void)
     func load(_ completion: @escaping (ProfileData) -> Void)
+    
+    func saveImage(image: UIImage)
+    func loadImage() -> UIImage?
 }
 
 class SaveProfileDataManager: ISaveManager {
@@ -11,6 +15,7 @@ class SaveProfileDataManager: ISaveManager {
     let imgQueue: DispatchQueue
     
     let fileName: String = "ProfileData.json"
+    let imgFileName: String = "ProfileImage"
     
     init() {
         self.queue = DispatchQueue(label: "ProfileInfo",
@@ -52,7 +57,7 @@ class SaveProfileDataManager: ISaveManager {
     }
     
     func load(_ completion: @escaping (ProfileData) -> Void) {
-        queue.async {
+        self.queue.async {
             var jsonString: String = ""
             if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
                                                                 in: .userDomainMask).first {
@@ -72,5 +77,43 @@ class SaveProfileDataManager: ISaveManager {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func saveImage(image: UIImage) {
+        self.imgQueue.async {
+            guard let documentDirectory = FileManager.default.urls(for: .documentDirectory,
+                                                                   in: .userDomainMask).first
+            else { return }
+            let fileURL = documentDirectory.appending(path: self.imgFileName)
+            guard let data = image.jpegData(compressionQuality: 1) else { return }
+            
+            if FileManager.default.fileExists(atPath: fileURL.path()) {
+                do {
+                    try FileManager.default.removeItem(atPath: fileURL.path())
+                    print("Removed old image")
+                } catch let removeError {
+                    print("couldn't remove file at path", removeError)
+                }
+            }
+            do {
+                try data.write(to: fileURL)
+            } catch let error {
+                print("error saving file with error", error)
+            }
+        }
+    }
+    
+    func loadImage() -> UIImage? {
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory,
+                                                        userDomainMask,
+                                                        true)
+        if let dirPath = paths.first {
+            let imageUrl = URL(filePath: dirPath).appendingPathComponent(self.imgFileName)
+            let image = UIImage(contentsOfFile: imageUrl.path)
+            return image
+        }
+        return nil
     }
 }

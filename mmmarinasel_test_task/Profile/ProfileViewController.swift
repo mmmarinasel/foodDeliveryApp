@@ -25,7 +25,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }()
     
     private var repeatNeeded: Bool = false
-//    private var profileData: ProfileData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +36,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.phoneNumberTextField.delegate = self
         
         self.profileModel.load { [weak self] data in
-//            self?.profileData = data
             self?.updateUI(profileData: data)
+        }
+        
+        DispatchQueue.main.async {
+            self.profileImageView.image = self.profileModel.loadImage()
         }
     }
     
@@ -190,6 +192,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                           phoneNumber: self.phoneNumberTextField.text)
             self.profileModel.save(profileData: profileData) { [weak self] errors in
                 self?.handleSave(errors)
+            }
+            if let image = self.profileImageView.image {
+                self.profileModel.saveImage(image: image)
+            } else {
+                print("IMAGE IS NIL")
             }
             print("SAVED SAVED SAVED")
         } else {
