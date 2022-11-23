@@ -206,8 +206,8 @@
             filePath = "mmmarinasel_test_task/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "handlePicturePicked(image:)"
             landmarkType = "7">
          </BreakpointContent>

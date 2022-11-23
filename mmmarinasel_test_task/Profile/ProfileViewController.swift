@@ -14,20 +14,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func saveHandleButton(_ sender: Any) {
-//        if let name = self.nameTextField.text, let number = self.phoneNumberTextField.text {
-        if self.nameTextField.text != "", self.phoneNumberTextField.text != "" {
-            self.profileData = ProfileData(name: self.nameTextField.text,
-                                           birthday: self.birthdayTextField.text,
-                                           email: self.emailTextField.text,
-                                           phoneNumber: self.phoneNumberTextField.text)
-            print("SAVED SAVED SAVED")
-        } else {
-            buildErrorAlert()
-        }
+        save()
     }
     
-    let datePicker = UIDatePicker()
-    private var profileData: ProfileData? = nil
+    private let datePicker = UIDatePicker()
+    
+    private lazy var profileModel: ProfileModel = {
+        var model = ProfileModel()
+        return model
+    }()
+    
+    private var repeatNeeded: Bool = false
+//    private var profileData: ProfileData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +35,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         showDatePicker()
         
         self.phoneNumberTextField.delegate = self
+        
+        self.profileModel.load { [weak self] data in
+//            self?.profileData = data
+            self?.updateUI(profileData: data)
+        }
     }
     
     private func buildErrorAlert() {
@@ -76,7 +79,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                           style: .default) { [weak self] _ in
             let vc = PicturesViewController()
             vc.delegate = self
-//            vc.modalPresentationStyle = .popover
             self?.present(vc, animated: true)
         }
         let cancelButton = UIAlertAction(title: "Cancel",
@@ -147,6 +149,77 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
         return result
+    }
+    
+    func updateUI(profileData: ProfileData) {
+        guard profileData.name != nil && profileData.phoneNumber != nil else { return }
+        DispatchQueue.main.async {
+            self.nameTextField.text = profileData.name
+            self.phoneNumberTextField.text = profileData.phoneNumber
+        }
+        if profileData.birthday != nil {
+            DispatchQueue.main.async {
+                self.birthdayTextField.text = profileData.birthday
+            }
+        } else if profileData.email != nil {
+            DispatchQueue.main.async {
+                self.emailTextField.text = profileData.email
+            }
+        }
+    }
+    
+    func handleSave(_ errors: [Error]) {
+        DispatchQueue.main.sync {
+            if !errors.isEmpty {
+                buildFailedSaveAlert()
+            } else {
+                buildSuccessefulSaveAlert()
+            }
+        }
+        if self.repeatNeeded {
+            self.repeatNeeded = false
+            self.save()
+        }
+    }
+    
+    func save() {
+        if self.nameTextField.text != "", self.phoneNumberTextField.text != "" {
+            var profileData = ProfileData(name: self.nameTextField.text,
+                                          birthday: self.birthdayTextField.text,
+                                          email: self.emailTextField.text,
+                                          phoneNumber: self.phoneNumberTextField.text)
+            self.profileModel.save(profileData: profileData) { [weak self] errors in
+                self?.handleSave(errors)
+            }
+            print("SAVED SAVED SAVED")
+        } else {
+            buildErrorAlert()
+        }
+    }
+    
+    func buildSuccessefulSaveAlert() {
+        let alert = UIAlertController(title: "Saved successefully",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok",
+                                     style: .default)
+        alert.addAction(okButton)
+        present(alert, animated: true)
+    }
+    
+    func buildFailedSaveAlert() {
+        let alert = UIAlertController(title: "Error",
+                                      message: "Failed to save data",
+                                      preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok",
+                                     style: .default)
+        let repeatButton = UIAlertAction(title: "Repeat",
+                                         style: .cancel) { [weak self] _ in
+            self?.repeatNeeded = true
+        }
+        alert.addAction(repeatButton)
+        alert.addAction(okButton)
+        present(alert, animated: true)
     }
 }
 

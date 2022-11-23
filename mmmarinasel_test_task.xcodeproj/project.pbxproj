@@ -37,6 +37,7 @@
 		41A716AD2918FAF300127EF6 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */; };
 		41A716AF2919252900127EF6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AE2919252900127EF6 /* LocationManager.swift */; };
 		41A716B129199DB800127EF6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716B029199DB800127EF6 /* MapViewController.swift */; };
+		41F70406292CEFAD00EC5E91 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F70405292CEFAD00EC5E91 /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		41A716AC2918FAF300127EF6 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		41A716AE2919252900127EF6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		41A716B029199DB800127EF6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		41F70405292CEFAD00EC5E91 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,14 +111,15 @@
 				41782CEF2911013F000C33BC /* ListOfFood */,
 				41782CEE29110131000C33BC /* Cart */,
 				41782CED2911011F000C33BC /* Profile */,
-				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
 				41A716AE2919252900127EF6 /* LocationManager.swift */,
-				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
 				41A716A22915C01400127EF6 /* SaveProfileDataManager.swift */,
+				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
 				41782CF0291119BD000C33BC /* ProfileData.swift */,
 				416BDC6328F86BB900981CAA /* FoodDescription.swift */,
-				416BDC5F28F82E3000981CAA /* NetworkManager.swift */,
 				412912622929532F000D8EC6 /* PictureModel.swift */,
+				41F70405292CEFAD00EC5E91 /* ProfileModel.swift */,
+				416BDC4828F8235F00981CAA /* AppDelegate.swift */,
+				416BDC4A28F8235F00981CAA /* SceneDelegate.swift */,
 				416BDC5428F8236100981CAA /* Assets.xcassets */,
 				416BDC5628F8236100981CAA /* LaunchScreen.storyboard */,
 				416BDC5928F8236100981CAA /* Info.plist */,
@@ -304,6 +307,7 @@
 				416BDC4D28F8235F00981CAA /* ViewController.swift in Sources */,
 				41A4D3B1291C5728002EE413 /* OrdersHistoryViewController.swift in Sources */,
 				41A716AA2915C47000127EF6 /* CartHeaderTableView.swift in Sources */,
+				41F70406292CEFAD00EC5E91 /* ProfileModel.swift in Sources */,
 				41A716AF2919252900127EF6 /* LocationManager.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
