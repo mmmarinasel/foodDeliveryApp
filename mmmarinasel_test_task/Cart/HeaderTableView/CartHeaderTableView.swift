@@ -9,14 +9,14 @@ class CartHeaderTableView: UITableViewHeaderFooterView {
     
     @IBAction func orderHandleButton(_ sender: Any) {
 //        print("ORDER ORDER ORDER ORDER ORDER ORDER ORDER")
-        let lm = LocationManager.shared
-        lm.requestAccess { isSuccess in
-            if isSuccess {
-                lm.getLocation { location in
-                    print(location)
-                }
-            }
-        }
+//        let lm = LocationManager.shared
+//        lm.requestAccess { isSuccess in
+//            if isSuccess {
+//                lm.getLocation { location in
+//                    print(location)
+//                }
+//            }
+//        }
     }
 
     @IBOutlet weak var changeLocationButton: UIButton!

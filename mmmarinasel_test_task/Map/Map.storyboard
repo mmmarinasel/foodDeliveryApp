@@ -26,7 +26,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
-                                    <action selector="backHandleButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0xx-Pv-wOf"/>
+                                    <action selector="backHandleButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sWp-de-rAF"/>
                                 </connections>
                             </button>
                         </subviews>

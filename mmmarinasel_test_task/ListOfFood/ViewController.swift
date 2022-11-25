@@ -3,6 +3,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var foodTableView: UITableView!
+    @IBOutlet weak var greetingLabel: UILabel!
     
     private let heightForRow: CGFloat = 200
     private let heightForHeader: CGFloat = 192
@@ -11,6 +12,9 @@ class ViewController: UIViewController {
     private var counter: Int = 0
     public var foodData: [FoodDescriptionOutput] = []
     
+    private lazy var profileModel: ProfileModel = {
+        return ProfileModel()
+    }()
     private var urlString = ""
     
     override func viewDidLoad() {
@@ -25,6 +29,14 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.foodTableView.reloadData()
                 }
+            }
+        }
+        
+        self.profileModel.load { [weak self] data in
+            let profileData: ProfileData = data
+            guard let name = profileData.name else { return }
+            DispatchQueue.main.async {
+                self?.greetingLabel.text = "Hello, \(name) 🙂"
             }
         }
     }

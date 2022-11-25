@@ -59,7 +59,6 @@ extension CartViewController: UITableViewDelegate {
         headerView.addressTextView.isEditable = false
         headerView.orderButton.layer.cornerRadius = 16
         headerView.changeLocationButton.addTarget(self, action: #selector(buildAlert), for: .touchUpInside)
-        
         return headerView
     }
     
