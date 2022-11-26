@@ -31,6 +31,10 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.profileModel.load { [weak self] data in
             let profileData: ProfileData = data
@@ -39,6 +43,7 @@ class ViewController: UIViewController {
                 self?.greetingLabel.text = "Hello, \(name) 🙂"
             }
         }
+        
     }
 }
 
