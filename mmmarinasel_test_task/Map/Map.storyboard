@@ -29,25 +29,60 @@
                                     <action selector="backHandleButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sWp-de-rAF"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EmU-ph-QsU" customClass="AddressView" customModule="mmmarinasel_test_task" customModuleProvider="target">
+                                <rect key="frame" x="30" y="567" width="315" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzj-rO-9uG">
+                                        <rect key="frame" x="15" y="10" width="285" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-iC-QAH">
+                                        <rect key="frame" x="119.5" y="46" width="76" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Confirm">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="RhP-iC-QAH" firstAttribute="centerX" secondItem="EmU-ph-QsU" secondAttribute="centerX" id="Dyw-cl-gBH"/>
+                                    <constraint firstAttribute="bottom" secondItem="RhP-iC-QAH" secondAttribute="bottom" constant="3" id="Q9A-aK-m9Z"/>
+                                    <constraint firstAttribute="height" constant="80" id="QTQ-Ul-8Hp"/>
+                                    <constraint firstItem="Pzj-rO-9uG" firstAttribute="top" secondItem="EmU-ph-QsU" secondAttribute="top" constant="10" id="nrw-W3-2eu"/>
+                                    <constraint firstItem="Pzj-rO-9uG" firstAttribute="centerX" secondItem="EmU-ph-QsU" secondAttribute="centerX" id="rRR-PG-OCy"/>
+                                    <constraint firstItem="Pzj-rO-9uG" firstAttribute="leading" secondItem="EmU-ph-QsU" secondAttribute="leading" constant="15" id="uZE-nb-Cat"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="addressLabel" destination="Pzj-rO-9uG" id="yXa-I0-Mls"/>
+                                    <outlet property="confirmButton" destination="RhP-iC-QAH" id="0C1-vQ-UnD"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JYm-KO-NT3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2z9-Q0-JgL"/>
                             <constraint firstItem="5bJ-fI-cyn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="8xh-Z1-oFB"/>
+                            <constraint firstItem="EmU-ph-QsU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Iaf-SX-4dS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JYm-KO-NT3" secondAttribute="trailing" id="JlI-7c-IzN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="EmU-ph-QsU" secondAttribute="bottom" constant="20" id="WhO-Cm-9xY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JYm-KO-NT3" secondAttribute="bottom" id="eNe-Af-wOX"/>
+                            <constraint firstItem="EmU-ph-QsU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="qkh-hj-6JF"/>
                             <constraint firstItem="JYm-KO-NT3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tvx-Ik-sgr"/>
                             <constraint firstItem="5bJ-fI-cyn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="vue-pU-99O"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressView" destination="EmU-ph-QsU" id="0wx-N5-3V4"/>
                         <outlet property="mapView" destination="JYm-KO-NT3" id="YOJ-5J-f4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88" y="4"/>
+            <point key="canvasLocation" x="87.200000000000003" y="3.1484257871064472"/>
         </scene>
     </scenes>
     <resources>

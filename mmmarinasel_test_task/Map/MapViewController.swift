@@ -5,13 +5,15 @@ import CoreLocation
 class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    
+    @IBOutlet weak var addressView: AddressView!
     @IBAction func backHandleButton(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
     fileprivate let lm = LocationManager.shared
+    
+    var delegate: CartViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +58,55 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
         annotation.title = "Deliver here"
         annotation.coordinate = coordinate
         self.mapView.addAnnotation(annotation)
+        setUpAddressView(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+    }
+    
+    func setUpAddressView(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        self.addressView.isHidden = false
+        self.addressView.layer.cornerRadius = 12
+        getAddressFromLatLon(latitude: latitude, longitude: longitude) { [weak self] address in
+            self?.addressView.addressLabel.text = address
+        }
+        self.addressView.confirmButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        
+    }
+    
+    @objc func handleTap(sender: UIButton!) {
+        self.delegate?.updateAddress(address: self.addressView.addressLabel.text)
+//        CartViewController.address = self.addressView.addressLabel.text
+        self.dismiss(animated: true)
+    }
+    
+    func getAddressFromLatLon(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String) -> Void) {
+        var center: CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = latitude
+        center.longitude = longitude
+        
+        let loc: CLLocation = CLLocation(latitude: center.latitude, longitude: center.longitude)
+        ceo.reverseGeocodeLocation(loc) { (placemarks, error) in
+            if error != nil {
+                print("reverse geodcode fail")
+            }
+            let pm = (placemarks ?? [CLPlacemark]()) as [CLPlacemark]
+            
+            if !pm.isEmpty {
+                let pm = placemarks?[0]
+                var addressString: String = ""
+                if pm?.subLocality != nil {
+                    addressString += (pm?.subLocality ?? "") + ", "
+                }
+                if pm?.thoroughfare != nil {
+                    addressString += (pm?.thoroughfare ?? "") + ", "
+                }
+                if pm?.locality != nil {
+                    addressString += (pm?.locality ?? "") + ", "
+                }
+                if pm?.country != nil {
+                    addressString += (pm?.country ?? "")
+                }
+                completion(addressString)
+            }
+        }
     }
 }

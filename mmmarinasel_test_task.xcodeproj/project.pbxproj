@@ -38,6 +38,7 @@
 		41A716AF2919252900127EF6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716AE2919252900127EF6 /* LocationManager.swift */; };
 		41A716B129199DB800127EF6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A716B029199DB800127EF6 /* MapViewController.swift */; };
 		41F70406292CEFAD00EC5E91 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F70405292CEFAD00EC5E91 /* ProfileModel.swift */; };
+		41F704082930F22100EC5E91 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F704072930F22100EC5E91 /* AddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		41A716AE2919252900127EF6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		41A716B029199DB800127EF6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		41F70405292CEFAD00EC5E91 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		41F704072930F22100EC5E91 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				41A716B029199DB800127EF6 /* MapViewController.swift */,
+				41F704072930F22100EC5E91 /* AddressView.swift */,
 				41A4D3A4291A869C002EE413 /* Map.storyboard */,
 			);
 			path = Map;
@@ -310,6 +313,7 @@
 				41F70406292CEFAD00EC5E91 /* ProfileModel.swift in Sources */,
 				41A716AF2919252900127EF6 /* LocationManager.swift in Sources */,
 				416BDC5328F8235F00981CAA /* mmmarinasel_test_task.xcdatamodeld in Sources */,
+				41F704082930F22100EC5E91 /* AddressView.swift in Sources */,
 				41782CEC2910778E000C33BC /* CartViewController.swift in Sources */,
 				41A4D3B3291C5BCF002EE413 /* OrderTableViewCell.swift in Sources */,
 				41782CF1291119BD000C33BC /* ProfileData.swift in Sources */,

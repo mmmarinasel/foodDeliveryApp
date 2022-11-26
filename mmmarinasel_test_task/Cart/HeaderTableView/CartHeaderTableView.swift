@@ -22,4 +22,9 @@ class CartHeaderTableView: UITableViewHeaderFooterView {
     @IBOutlet weak var changeLocationButton: UIButton!
     
     static let reuseIdentifier = "CartHeaderID"
+    
+    func setAddress(address: String?) {
+        guard let address = address else { return }
+        self.addressTextView.text = address
+    }
 }

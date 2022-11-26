@@ -1,11 +1,17 @@
 import UIKit
 
+protocol CartViewDelegate {
+    func updateAddress(address: String?)
+}
+
 class CartViewController: UIViewController {
     
     @IBOutlet weak var cartTableView: UITableView!
     
     private let heightForHeader: CGFloat = 160
     private let heightForCell: CGFloat = 100
+    
+    private var address: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +42,7 @@ class CartViewController: UIViewController {
         let story = UIStoryboard(name: "Map", bundle: nil)
         let vc = story.instantiateViewController(identifier: "mapVC") as? MapViewController
         guard let vcontroller = vc else { return }
+        vcontroller.delegate = self
         self.present(vcontroller, animated: true, completion: nil)
       }
     
@@ -57,6 +64,7 @@ extension CartViewController: UITableViewDelegate {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CartHeaderTableView.reuseIdentifier) as? CartHeaderTableView
         else { return CartHeaderTableView() }
         headerView.addressTextView.isEditable = false
+        headerView.setAddress(address: self.address)
         headerView.orderButton.layer.cornerRadius = 16
         headerView.changeLocationButton.addTarget(self, action: #selector(buildAlert), for: .touchUpInside)
         return headerView
@@ -81,4 +89,11 @@ extension CartViewController: UITableViewDataSource {
         return cell
     }
 
+}
+
+extension CartViewController: CartViewDelegate {
+    func updateAddress(address: String?) {
+        self.address = address
+        self.cartTableView.reloadData()
+    }
 }
