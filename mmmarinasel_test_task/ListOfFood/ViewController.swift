@@ -118,9 +118,9 @@ extension ViewController: UITableViewDataSource {
         cell.descriptionLabel.isEditable = false
         cell.priceButton.layer.cornerRadius = 5
         cell.priceButton.layer.borderWidth = 1
-        cell.priceButton.layer.borderColor = UIColor(red: 246 / 255,
-                                                     green: 74 / 255,
-                                                     blue: 126 / 255,
+        cell.priceButton.layer.borderColor = UIColor(red: 214 / 255,
+                                                     green: 212 / 255,
+                                                     blue: 103 / 255,
                                                      alpha: 1).cgColor
         return cell
     }

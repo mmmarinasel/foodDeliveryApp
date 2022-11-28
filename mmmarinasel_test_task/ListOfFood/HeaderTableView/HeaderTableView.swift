@@ -29,14 +29,14 @@ class HeaderTableView: UITableViewHeaderFooterView {
         button.layer.cornerRadius = 16
         button.layer.borderWidth = 1
         button.clipsToBounds = true
-        button.layer.borderColor = UIColor(red: 253 / 256,
-                                           green: 58 / 256,
-                                           blue: 105 / 256,
-                                           alpha: 0.4).cgColor
-        button.setTitleColor(UIColor(red: 253 / 256,
-                                     green: 58 / 256,
-                                     blue: 105 / 256,
-                                     alpha: 0.4),
+        button.layer.borderColor = UIColor(red: 154 / 256,
+                                           green: 212 / 256,
+                                           blue: 215 / 256,
+                                           alpha: 1).cgColor
+        button.setTitleColor(UIColor(red: 241 / 256,
+                                     green: 186 / 256,
+                                     blue: 226 / 256,
+                                     alpha: 1),
                              for: .normal)
         
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)

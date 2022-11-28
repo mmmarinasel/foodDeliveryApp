@@ -49,7 +49,7 @@
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-qW-tKH">
                                                     <rect key="frame" x="263" y="166.5" width="88" height="33.5"/>
-                                                    <color key="tintColor" red="0.96649688479999996" green="0.29015651349999999" blue="0.49230378870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.95325762030000005" green="0.73378974200000002" blue="0.31220787760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="от 345 р">
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="16"/>

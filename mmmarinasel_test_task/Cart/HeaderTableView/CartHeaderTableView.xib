@@ -23,7 +23,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23000 руб" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDD-bS-ihg">
                     <rect key="frame" x="113" y="12" width="88" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" red="0.95325762030000005" green="0.73378974200000002" blue="0.31220787760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pk-yz-kaa">
@@ -34,11 +34,11 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9n-K1-Xsv">
                     <rect key="frame" x="145" y="107.66666666666667" width="100" height="34.333333333333329"/>
-                    <color key="backgroundColor" red="0.66631394619999995" green="0.7450824976" blue="0.74508553740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.96184903379999998" green="0.76055014129999998" blue="0.93128585819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="WXB-SZ-RBL"/>
                     </constraints>
-                    <color key="tintColor" red="0.089764215049999999" green="0.4665470719" blue="0.51545184850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.95455211399999995" green="0.50954800840000003" blue="0.72846788169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Order">
                         <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
@@ -49,7 +49,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLZ-HX-BjD">
                     <rect key="frame" x="337.66666666666669" y="45" width="37.333333333333314" height="34.333333333333343"/>
-                    <color key="tintColor" red="0.097744785249999994" green="0.47048187260000002" blue="0.51125127079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.95455211399999995" green="0.50954800840000003" blue="0.72846788169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
@@ -58,13 +58,13 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your adress" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LH3-hy-GCd">
                     <rect key="frame" x="81.999999999999986" y="41" width="248.66666666666663" height="57"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <color key="textColor" systemColor="labelColor"/>
+                    <color key="textColor" red="0.96146267649999995" green="0.64360922570000001" blue="0.20733931659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-Nj-okN">
                     <rect key="frame" x="336" y="87" width="39" height="35"/>
-                    <color key="tintColor" red="0.089764215049999999" green="0.4665470719" blue="0.51545184850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.95455211399999995" green="0.50954800840000003" blue="0.72846788169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
@@ -104,9 +104,6 @@
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
