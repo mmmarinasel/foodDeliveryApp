@@ -1,5 +1,9 @@
 import UIKit
 
+protocol CategoryDelegate: AnyObject {
+    func setCategory(_ categoryId: Int)
+}
+
 class HeaderTableView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -8,7 +12,10 @@ class HeaderTableView: UITableViewHeaderFooterView {
     @IBOutlet weak var categoriesStackView: UIStackView!
     
     static let reuseIdentifier = "HeaderID"
-
+    private var category2button: [CategoryButton] = []
+    
+    weak var delegate: CategoryDelegate?
+    
     func addImageView(imgName: String) {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +27,7 @@ class HeaderTableView: UITableViewHeaderFooterView {
         self.stackView.addArrangedSubview(imageView)
     }
     
-    func addButton(name: String) {
+    func addButton(name: String, categoryId: Int) {
         let button = UIButton()
         button.heightAnchor.constraint(equalToConstant: 32).isActive = true
         button.widthAnchor.constraint(equalToConstant: 88).isActive = true
@@ -40,11 +47,17 @@ class HeaderTableView: UITableViewHeaderFooterView {
                              for: .normal)
         
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
+        self.category2button.append(CategoryButton(categoryId: categoryId, button: button))
         self.categoriesStackView.addArrangedSubview(button)
     }
     
     @objc func buttonAction(sender: UIButton!) {
-      print("Button tapped")
+        let categId = self.category2button.first(where: { $0.button == sender })?.categoryId ?? 0
+        self.delegate?.setCategory(categId)
     }
+}
+
+struct CategoryButton {
+    var categoryId: Int
+    var button: UIButton
 }

@@ -4,8 +4,6 @@ class PicturesViewController: UIViewController {
 
     private var picturesCollectionView: UICollectionView?
     
-    private let urlString: String = "https://api.unsplash.com/photos/?client_id=RDTgAwXSjpgiUCmhnvEhTqQ-lYoE7FGHg2aGJo0vGEQ"
-    
     private let cellId: String = "pictureCell"
     private let verticalPadding: Double = 20
     private let horizontalPadding: Double = 10
@@ -17,7 +15,10 @@ class PicturesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.getPicturesJson(urlString: self.urlString) { [weak self] data in
+//        NetworkManager.getPicturesJson(urlString: self.urlString) { [weak self] data in
+//            self?.pictures.append(contentsOf: data)
+//        }
+        NetworkManager.getJson(urlString: NetworkManager.picturesURL) { [weak self] data in
             self?.pictures.append(contentsOf: data)
         }
     }

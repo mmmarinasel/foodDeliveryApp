@@ -1,34 +1,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var foodTableView: UITableView!
     @IBOutlet weak var greetingLabel: UILabel!
     
     private let heightForRow: CGFloat = 200
     private let heightForHeader: CGFloat = 192
-    
-    private var foodCount: Int = 1
+
     private var counter: Int = 0
-    public var foodData: [FoodDescriptionOutput] = []
+    public var foodData: FoodDescriptions = [] // FoodDescriptions()
+    public var categories: Categories = [] // Categories()
+//    public var menu: [Category : FoodDescriptions] = [:]
+    public var menu: [Menu] = []
+    private var selectedCategoryId: Int?
     
     private lazy var profileModel: ProfileModel = {
         return ProfileModel()
     }()
-    private var urlString = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.foodTableView.register(UINib(nibName: "HeaderTableView", bundle: nil),
                                     forHeaderFooterViewReuseIdentifier: HeaderTableView.reuseIdentifier)
-        for temp in 0...self.foodCount {
-            self.urlString = NetworkManager.getURLString(counter: temp)
-            NetworkManager.getJson(urlString: self.urlString) { [weak self] data in
-                self?.foodData.append(FoodDescriptionOutput(data: data))
-                DispatchQueue.main.async {
-                    self?.foodTableView.reloadData()
-                }
+
+        NetworkManager.getJson(urlString: NetworkManager.categoriesURL) { [weak self] categories in
+            self?.categories = categories
+            self?.selectedCategoryId = self?.categories[0].id ?? 0
+            self?.buildMenu()
+            DispatchQueue.main.async {
+                self?.foodTableView.reloadData()
+            }
+        }
+        
+        NetworkManager.getJson(urlString: NetworkManager.foodURL) { [weak self] data in
+            self?.foodData = data
+            self?.buildMenu()
+            DispatchQueue.main.async {
+                self?.foodTableView.reloadData()
             }
         }
     }
@@ -45,7 +55,31 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    func buildMenu() {
+        guard !self.categories.isEmpty && !self.foodData.isEmpty else { return }
+        var products: FoodDescriptions = []
+        for category in self.categories {
+            products = []
+            for product in self.foodData where product.categoryId == category.id {
+                products.append(product)
+            }
+            self.menu.append(Menu(category: category, products: products))
+        }
+    }
 }
+
+    // MARK: - CategoryDelegate
+
+extension ViewController: CategoryDelegate {
+    
+    func setCategory(_ categoryId: Int) {
+        self.selectedCategoryId = categoryId
+        self.foodTableView.reloadData()
+    }
+}
+
+    // MARK: - UITableViewDelegate
 
 extension ViewController: UITableViewDelegate {
     
@@ -61,7 +95,7 @@ extension ViewController: UITableViewDelegate {
 
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderTableView.reuseIdentifier) as? HeaderTableView
         else { return HeaderTableView() }
-        if self.counter == 0 {
+        if !self.categories.isEmpty && self.counter == 0 {
             headerView.stackView.spacing = 16
             headerView.categoriesStackView.spacing = 8
             headerView.addImageView(imgName: "food_ad1")
@@ -69,13 +103,12 @@ extension ViewController: UITableViewDelegate {
             headerView.addImageView(imgName: "food_ad3")
             headerView.addImageView(imgName: "food_ad4")
             headerView.addImageView(imgName: "food_ad5")
-            headerView.addButton(name: "Пицца")
-            headerView.addButton(name: "Паста")
-            headerView.addButton(name: "Комбо")
-            headerView.addButton(name: "Десерты")
-            headerView.addButton(name: "Напитки")
+            for idx in 0..<self.categories.count {
+                headerView.addButton(name: self.categories[idx].name, categoryId: self.categories[idx].id)
+            }
             self.counter += 1
         }
+        headerView.delegate = self
         return headerView
     }
     
@@ -85,43 +118,33 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+    // MARK: - UITableViewDataSource
+
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.foodData.count
+        guard !self.menu.isEmpty else { return 0 }
+        let filtered = self.menu.first(where: { $0.category.id == self.selectedCategoryId })
+        return filtered?.products.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell") as? FoodTableViewCell
         else { return FoodTableViewCell() }
-        
         DispatchQueue.main.async {
-            let item = self.foodData[indexPath.row]
-            let ingredients = item.data.extendedIngredients
-            for ingredient in ingredients {
-                if ingredient.name == ingredients.last?.name {
-                    cell.descriptionLabel.text += ingredient.name
-                } else {
-                    cell.descriptionLabel.text += "\(ingredient.name), "
-                }
-            }
-            cell.nameLabel.text = item.data.title
-            if item.image == nil {
-                NetworkManager.loadImageFromURL(urlString: item.data.imageURL) { [weak self] img in
-                    self?.foodData[indexPath.row].image = img
-                    cell.foodImageView.image = img
-                }
-            } else {
-                cell.foodImageView.image = UIImage(named: "placeholder-image")
+            let item = self.menu.first(where: { $0.category.id == self.selectedCategoryId })
+            cell.nameLabel.text = item?.products[indexPath.row].title
+            cell.descriptionLabel.text = item?.products[indexPath.row].description
+            cell.priceButton.setTitle("\(item?.products[indexPath.row].price ?? "0") $", for: .normal)
+            cell.foodImageView.image = UIImage(named: "placeholder-image")
+            NetworkManager.loadImageFromURL(urlString: item?.products[indexPath.row].imageURL ?? "") { img in
+                cell.foodImageView.image = img
             }
         }
         cell.descriptionLabel.isEditable = false
         cell.priceButton.layer.cornerRadius = 5
         cell.priceButton.layer.borderWidth = 1
-        cell.priceButton.layer.borderColor = UIColor(red: 214 / 255,
-                                                     green: 212 / 255,
-                                                     blue: 103 / 255,
-                                                     alpha: 1).cgColor
+        cell.priceButton.layer.borderColor = UIColor(named: "price_btn")?.cgColor
         return cell
     }
 }
